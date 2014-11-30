@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>D:\SofeWare\cocos2d\cocos2d-x-2.2\projects\KouDaiXianXia\Resources\NewProject</ProjectDir>
+  <Version>1.0.0.0</Version>
+  <Resources>D:\SofeWare\cocos2d\cocos2d-x-2.2\projects\KouDaiXianXia\Resources\NewProject\Resources</Resources>
+  <Name>NewProject</Name>
+  <JsonFileName>NewProject.json</JsonFileName>
+  <JsonFolder>D:\SofeWare\cocos2d\cocos2d-x-2.2\projects\KouDaiXianXia\Resources\NewProject\Json</JsonFolder>
+  <JsonList>
+    <string>NewProject_1.json</string>
+  </JsonList>
+  <CanvasSize>
+    <Width>1920</Width>
+    <Height>1080</Height>
+  </CanvasSize>
+  <filePath>D:\SofeWare\cocos2d\cocos2d-x-2.2\projects\KouDaiXianXia\Resources\NewProject\NewProject.xml.ui</filePath>
+  <ProjectType>UIProject</ProjectType>
+  <ResRelativePath />
+  <imageFileList />
+  <imagePngList />
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson />
+</UIProject>
