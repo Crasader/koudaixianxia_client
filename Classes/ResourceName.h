@@ -10,7 +10,8 @@
 #define TestGame_ResourceName_h
 /* Resource Name*/
 //ip port
-#define ip "10.0.0.101"
+// #define ip "10.0.0.101"
+#define ip		"127.0.0.1"
 #define ports  11009
 //command Id
 #define CMID_LOGIN 1001                  //Íæ¼ÒµÇÂ½
