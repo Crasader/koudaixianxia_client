@@ -1,4 +1,4 @@
-#include "SocketClient.h"
+ï»¿#include "SocketClient.h"
 #include "MessageHandler.h"
 #include "GameData.h"
 #include "message.h"
@@ -28,7 +28,7 @@ m_pHandler(netImpl)
 	m_bThreadSendCreated = false;
     dxflag=false;
     
-//    m_dictionary->retain();  //×Öµä ´æ·Å Êı¾İ
+//    m_dictionary->retain();  //å­—å…¸ å­˜æ”¾ æ•°æ®
 //    if(m_dictionary)
 //    {
 //            m_dictionary->removeAllObjects();
@@ -280,8 +280,8 @@ bool SocketClient::connectServer()
 #endif
 	}
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-	//·Ç°²×¿Æ½Ì¨
-	WSADATA            wsd;            //WSADATA±äÁ¿
+	//éå®‰å“å¹³å°
+	WSADATA            wsd;            //WSADATAå˜é‡
 	WSAStartup(MAKEWORD(2,2), &wsd) ;
 #endif
 	m_hSocket = socket(AF_INET,SOCK_STREAM,0);
@@ -405,7 +405,7 @@ void* SocketClient::ThreadSendMessage(void *p){
 		}
 		else{
 			This->m_iState = SocketClient_DESTROY;
-			string error("Á¬ÍøÊ§°Ü,Çë¼ì²éÍøÂçÉèÖÃ");
+			string error("è¿ç½‘å¤±è´¥,è¯·æ£€æŸ¥ç½‘ç»œè®¾ç½®");
 	//		char tmp[64];
 	//		sprintf(tmp, "%d",This->m_iport);
 	//		error.append(This->m_host).append(":").append(tmp);
@@ -424,14 +424,14 @@ void* SocketClient::ThreadSendMessage(void *p){
 	
 	while (This->m_iState != SocketClient_DESTROY) {
 		if( This->m_iState == SocketClient_OK){
-		//·¢ËÍ»º³åÆ÷ÓĞÒÅÁôµÄÊı¾İÒª·¢ËÍ									 
+		//å‘é€ç¼“å†²å™¨æœ‰é—ç•™çš„æ•°æ®è¦å‘é€									 
 		if(sendBuff->getPosition() > 0){
 			sendBuff->flip();
 			int ret = send(socket,(char *)sendBuff->getBuffer(),sendBuff->getLimit(),0);
 			if(ret == -1){
 				This->m_iState = SocketClient_DESTROY ;
                 
-				string err("·¢ËÍÊı¾İ£¬ÍøÂçÒì³££¡");
+				string err("å‘é€æ•°æ®ï¼Œç½‘ç»œå¼‚å¸¸ï¼");
 //				char* errStr = strerror(errno);
 //				if( errStr!=NULL ) err.append(errStr);
 				
@@ -458,7 +458,7 @@ void* SocketClient::ThreadSendMessage(void *p){
 				This->m_iState = SocketClient_DESTROY;
 				printf("send buffer is full, send thread stop!");
 				MyLock lock(&This->m_sendqueue_mutex);						
-				This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CANNOT_SEND_MESSAGE,0,"·¢ËÍ»º³åÆ÷ÒÑÂú£¬ÄúµÄÍøÂç»·¾³ºÃÏñ³öÏÖÁËÎÊÌâ£¡"));
+				This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CANNOT_SEND_MESSAGE,0,"å‘é€ç¼“å†²å™¨å·²æ»¡ï¼Œæ‚¨çš„ç½‘ç»œç¯å¢ƒå¥½åƒå‡ºç°äº†é—®é¢˜ï¼"));
 				return ((void *)0);
 			}
 			
@@ -471,7 +471,7 @@ void* SocketClient::ThreadSendMessage(void *p){
 			int ret = send(socket,(char *)sendBuff->getBuffer(),sendBuff->getLimit(),0);
 			if(ret == -1){
 				This->m_iState = SocketClient_DESTROY;
-				string err("·¢ËÍÊı¾İ£¬ÍøÂçÒì³££¡");
+				string err("å‘é€æ•°æ®ï¼Œç½‘ç»œå¼‚å¸¸ï¼");
 				MyLock lock(&This->m_sendqueue_mutex);						
 				This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CANNOT_SEND_MESSAGE,errno,err));
 				return ((void *)0);
@@ -521,14 +521,14 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 	aTime.tv_sec = 1;
 	aTime.tv_usec = 0;
 
-	//×î´ó¶àÉÙÃë£¬Á¬½ÓÉÏÊÕ²»µ½Êı¾İ¾ÍÌáÊ¾ÓÃ»§£¬ÖØĞÂµÇÂ¼
+	//æœ€å¤§å¤šå°‘ç§’ï¼Œè¿æ¥ä¸Šæ”¶ä¸åˆ°æ•°æ®å°±æç¤ºç”¨æˆ·ï¼Œé‡æ–°ç™»å½•
 	int maxIdleTimeInSeconds = 60*3;
 	
-	//×î´ó¶àÉÙÃë£¬Á¬½ÓÉÏÊÕ²»µ½Êı¾İ¾ÍÌáÊ¾ÓÃ»§£¬Ñ¡ÔñÖØÁ¬
+	//æœ€å¤§å¤šå°‘ç§’ï¼Œè¿æ¥ä¸Šæ”¶ä¸åˆ°æ•°æ®å°±æç¤ºç”¨æˆ·ï¼Œé€‰æ‹©é‡è¿
 	int hint2TimeInSeconds = 60;
 	
 	
-	//¶à³¤Ê±¼äÃ»ÓĞÊÕµ½ÈÎºÎÊı¾İ£¬ÌáÊ¾ÓÃ»§
+	//å¤šé•¿æ—¶é—´æ²¡æœ‰æ”¶åˆ°ä»»ä½•æ•°æ®ï¼Œæç¤ºç”¨æˆ·
 	int hintTimeInSeconds = 30;
 	
 	struct timeval lastHintUserTime;
@@ -565,12 +565,12 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 		if (ret == -1 )
 		{
 			if(errno == EINTR){
-				printf("======   ÊÕµ½ÖĞ¶ÏĞÅºÅ£¬Ê²Ã´¶¼²»´¦Àí£½£½£½£½£½£½£½£½£½");
+				printf("======   æ”¶åˆ°ä¸­æ–­ä¿¡å·ï¼Œä»€ä¹ˆéƒ½ä¸å¤„ç†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼");
 			}else{
 				This->m_iState = SocketClient_DESTROY;
 //				if(DEBUG)printf("select error, receive thread stop! errno=%d, address=%p\n",errno,This);
 				MyLock lock(&This->m_sendqueue_mutex);
-				This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CONNECT_TERMINATE,errno,"Á¬½ÓÒì³£ÖĞ¶Ï"));
+				This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CONNECT_TERMINATE,errno,"è¿æ¥å¼‚å¸¸ä¸­æ–­"));
 				return ((void *)0);
 			}
 		}
@@ -589,18 +589,18 @@ void* SocketClient::ThreadReceiveMessage(void *p)
                         This->m_receivedMessageQueue.pop();
                         delete msg;
                     }				
-                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_RECONNECT_FORCE,0,"ÄúµÄÍøÂçÒÑ¾­³öÎÊÌâÁË£¡"));
+                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_RECONNECT_FORCE,0,"æ‚¨çš„ç½‘ç»œå·²ç»å‡ºé—®é¢˜äº†ï¼"));
                    //This->connectServer();
                     
                 }else if(now.tv_sec - lastReceiveDataTime.tv_sec > hint2TimeInSeconds && now.tv_sec - lastHintUserTime.tv_sec > hintTimeInSeconds){
                     lastHintUserTime = now;
                     MyLock lock(&This->m_sendqueue_mutex);						
-                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_RECONNECT_HINT,0,"ÄúµÄÍøÂçºÃÏñ³öÎÊÌâÁË£¡"));
+                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_RECONNECT_HINT,0,"æ‚¨çš„ç½‘ç»œå¥½åƒå‡ºé—®é¢˜äº†ï¼"));
                  //   This->connectServer();
                 }else if(now.tv_sec - lastReceiveDataTime.tv_sec > hintTimeInSeconds && now.tv_sec - lastHintUserTime.tv_sec > hintTimeInSeconds){
                     lastHintUserTime = now;
                     MyLock lock(&This->m_sendqueue_mutex);						
-                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_IDLE_TIMEOUT,0,"ÄúµÄÍøÂçºÃÏñ³öÎÊÌâÁË£¡"));
+                    This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_IDLE_TIMEOUT,0,"æ‚¨çš„ç½‘ç»œå¥½åƒå‡ºé—®é¢˜äº†ï¼"));
                   //  This->connectServer();
                 }
             }else{
@@ -634,8 +634,8 @@ void* SocketClient::ThreadReceiveMessage(void *p)
                     
                 //    delete This;
                 //    This->stop(true);
-					string tmp("ÍøÂçÁ¬½ÓÖĞ¶Ï£¡");
-                //    CCMessageBox("ÍøÂç´íÎó£¬ÇëÖØÊÔ£¡", "ÌáÊ¾£¡~~");
+					string tmp("ç½‘ç»œè¿æ¥ä¸­æ–­ï¼");
+                //    CCMessageBox("ç½‘ç»œé”™è¯¯ï¼Œè¯·é‡è¯•ï¼", "æç¤ºï¼~~");
                     
                     This->m_iState = SocketClient_WAIT_CONNECT;
                   //  This->reconnect();
@@ -658,7 +658,7 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 						This->m_receivedMessageQueue.pop();
 						delete msg;
 					}
-					This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_SERVER_CLOSE_CONNECTION,errno,"·şÎñÆ÷Ö÷¶¯¹Ø±ÕÁ¬½Ó!"));
+					This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_SERVER_CLOSE_CONNECTION,errno,"æœåŠ¡å™¨ä¸»åŠ¨å…³é—­è¿æ¥!"));
 					
 					return ((void *)0);
 				}
@@ -725,7 +725,7 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 //									message->type == 0x800EE001 ||
 //                                    message->type == 0x000EE008 ||
 //                                    ( message->type == 0x80000011 && mieshi_channel.find("UCSDK")!=string::npos )) {
-//									//Èç¹ûÊÇ×ÊÔ´¹ÜÀíµÄ2ÌõĞ­Òé
+//									//å¦‚æœæ˜¯èµ„æºç®¡ç†çš„2æ¡åè®®
 //									GameMessageFactory::handleMessage(message, ResourceDataManager::getInstance());
 //									delete message;
 //								}else {
@@ -734,7 +734,7 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 //								}
 //                                if(true)
 //                                {
-//                                    //Ìí¼Ó´¦Àí
+//                                    //æ·»åŠ å¤„ç†
 //                                }else{
                                     MyLock lock(&This->m_sendqueue_mutex);
 									This->m_receivedMessageQueue.push(message);
@@ -777,7 +777,7 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 								delete msg;
 							}
 							
-							This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CONNECT_TERMINATE,0,"Êı¾İ°üÌ«´ó£¬Á¬½ÓÖĞ¶Ï£¡"));
+							This->m_receivedMessageQueue.push(constructErrorMessage(TYPE_SELF_DEINE_MESSAGE_CONNECT_TERMINATE,0,"æ•°æ®åŒ…å¤ªå¤§ï¼Œè¿æ¥ä¸­æ–­ï¼"));
 							return ((void *)0);
 						}else {
 							//printf("----------------------------\n");
@@ -798,7 +798,7 @@ void* SocketClient::ThreadReceiveMessage(void *p)
 
 	return (void*)0;
 }
-//»ñÈ¡·şÎñÆ÷°ü
+//è·å–æœåŠ¡å™¨åŒ…
 Message* SocketClient::pickReceivedMessage(){
 	Message* msg = NULL;
 	MyLock lock(&m_sendqueue_mutex);
@@ -901,16 +901,16 @@ SocketServer::~SocketServer(){
 void* ThreadListen(void* p){
     SocketServer* serv = (SocketServer*)p;
     char tmp[256]="";
-    while (serv->isStartedServer) //·şÎñÆ÷¶ËÒªÒ»Ö±ÔËĞĞ
+    while (serv->isStartedServer) //æœåŠ¡å™¨ç«¯è¦ä¸€ç›´è¿è¡Œ
     {
-        //¶¨Òå¿Í»§¶ËµÄsocketµØÖ·½á¹¹client_addr
+        //å®šä¹‰å®¢æˆ·ç«¯çš„socketåœ°å€ç»“æ„client_addr
         struct sockaddr_in client_addr;
         socklen_t length = sizeof(client_addr);
-        //½ÓÊÜÒ»¸öµ½server_socket´ú±íµÄsocketµÄÒ»¸öÁ¬½Ó
-        //Èç¹ûÃ»ÓĞÁ¬½ÓÇëÇó,¾ÍµÈ´ıµ½ÓĞÁ¬½ÓÇëÇó--ÕâÊÇacceptº¯ÊıµÄÌØĞÔ
-        //acceptº¯Êı·µ»ØÒ»¸öĞÂµÄsocket,Õâ¸ösocket(new_server_socket)ÓÃÓÚÍ¬Á¬½Óµ½µÄ¿Í»§µÄÍ¨ĞÅ
-        //new_server_socket´ú±íÁË·şÎñÆ÷ºÍ¿Í»§¶ËÖ®¼äµÄÒ»¸öÍ¨ĞÅÍ¨µÀ
-        //acceptº¯Êı°ÑÁ¬½Óµ½µÄ¿Í»§¶ËĞÅÏ¢ÌîĞ´µ½¿Í»§¶ËµÄsocketµØÖ·½á¹¹client_addrÖĞ
+        //æ¥å—ä¸€ä¸ªåˆ°server_socketä»£è¡¨çš„socketçš„ä¸€ä¸ªè¿æ¥
+        //å¦‚æœæ²¡æœ‰è¿æ¥è¯·æ±‚,å°±ç­‰å¾…åˆ°æœ‰è¿æ¥è¯·æ±‚--è¿™æ˜¯acceptå‡½æ•°çš„ç‰¹æ€§
+        //acceptå‡½æ•°è¿”å›ä¸€ä¸ªæ–°çš„socket,è¿™ä¸ªsocket(new_server_socket)ç”¨äºåŒè¿æ¥åˆ°çš„å®¢æˆ·çš„é€šä¿¡
+        //new_server_socketä»£è¡¨äº†æœåŠ¡å™¨å’Œå®¢æˆ·ç«¯ä¹‹é—´çš„ä¸€ä¸ªé€šä¿¡é€šé“
+        //acceptå‡½æ•°æŠŠè¿æ¥åˆ°çš„å®¢æˆ·ç«¯ä¿¡æ¯å¡«å†™åˆ°å®¢æˆ·ç«¯çš„socketåœ°å€ç»“æ„client_addrä¸­
         int new_server_socket = accept(serv->server_socket,(struct sockaddr*)&client_addr,&length);
         if ( new_server_socket < 0)
         {
@@ -919,7 +919,7 @@ void* ThreadListen(void* p){
         }
         memset(tmp, 0, 256);
         int rt = recv(new_server_socket, tmp, 256,0);
-        //¹Ø±ÕÓë¿Í»§¶ËµÄÁ¬½Ó
+        //å…³é—­ä¸å®¢æˆ·ç«¯çš„è¿æ¥
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		closesocket(new_server_socket);
 #else
@@ -931,7 +931,7 @@ void* ThreadListen(void* p){
             break;
         }
     }
-    //¹Ø±Õ¼àÌıÓÃµÄsocket
+    //å…³é—­ç›‘å¬ç”¨çš„socket
     if( serv->server_socket !=0 ){
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 		closesocket(serv->server_socket);
@@ -979,11 +979,11 @@ bool SocketServer::startServer(){
         isStartServerBindFail = false;
         struct sockaddr_in server_addr;
         int HELLO_WORLD_SERVER_PORT = 43067;
-        memset(&server_addr,0,sizeof(server_addr)); //°ÑÒ»¶ÎÄÚ´æÇøµÄÄÚÈİÈ«²¿ÉèÖÃÎª0
+        memset(&server_addr,0,sizeof(server_addr)); //æŠŠä¸€æ®µå†…å­˜åŒºçš„å†…å®¹å…¨éƒ¨è®¾ç½®ä¸º0
         server_addr.sin_family = AF_INET;
         server_addr.sin_addr.s_addr = htons(INADDR_ANY);
         server_addr.sin_port = htons(HELLO_WORLD_SERVER_PORT);
-        //´´½¨ÓÃÓÚinternetµÄÁ÷Ğ­Òé(TCP)socket,ÓÃserver_socket´ú±í·şÎñÆ÷socket
+        //åˆ›å»ºç”¨äºinternetçš„æµåè®®(TCP)socket,ç”¨server_socketä»£è¡¨æœåŠ¡å™¨socket
         server_socket = socket(AF_INET,SOCK_STREAM,0);
         if( server_socket < 0)
         {
@@ -997,7 +997,7 @@ bool SocketServer::startServer(){
 		setsockopt(server_socket,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof(opt));
 #endif
         
-        //°ÑsocketºÍsocketµØÖ·½á¹¹ÁªÏµÆğÀ´
+        //æŠŠsocketå’Œsocketåœ°å€ç»“æ„è”ç³»èµ·æ¥
         
 //        if( bind(server_socket,(struct sockaddr*)&server_addr,sizeof(server_addr)))
 //        {
@@ -1005,7 +1005,7 @@ bool SocketServer::startServer(){
 //            //if( DEBUG)        printf("[SocketServer] Server Bind Port : %d Failed!\n", HELLO_WORLD_SERVER_PORT);
 //            return false;
 //        }
-        //server_socketÓÃÓÚ¼àÌı
+        //server_socketç”¨äºç›‘å¬
         if ( listen(server_socket, 5) )
         {
           //  if( DEBUG)        printf("[SocketServer] Server Listen Failed!\n");

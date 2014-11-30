@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  BattleLayer.h
 //  TestGame
 //
@@ -60,9 +60,9 @@ public:
 
     CCString * str;
     SocketClient * socket;
-    void setRole();//ÉèÖÃ½ÇÉ«ĞÅÏ¢
+    void setRole();//è®¾ç½®è§’è‰²ä¿¡æ¯
  
-    void monsterVisible();//¹ÖÎï¿ªÊ¼³öÏÖ
+    void monsterVisible();//æ€ªç‰©å¼€å§‹å‡ºç°
 protected:
 	CCPoint                 m_pointPath[POINT_NUM] ;
 	CCParticleSystem*       m_pParticle ;
@@ -72,7 +72,7 @@ protected:
 	CCPoint                 m_touchEndPoint ;
 	long                   m_timer ;
 public:
-    int gestureTag;//ÊÖÊÆ±ê¼Ç  1 Ö±Ïß  2 »­È¦
+    int gestureTag;//æ‰‹åŠ¿æ ‡è®°  1 ç›´çº¿  2 ç”»åœˆ
     Person *selectedPerson;
     CCPoint m_personBeginPoint;
     CCPoint m_personEndedPoint;
@@ -83,17 +83,17 @@ public:
     CCDictionary  *touch_dic;
     vector<int> touchNum;
     CCArray *appearArr;
-    void initParticle();//³õÊ¼»¯Á£×ÓĞ§¹û
+    void initParticle();//åˆå§‹åŒ–ç²’å­æ•ˆæœ
     Path2D path;
     GameOver *gameover;
     PinballLayer *pinballlayer;
-    void enemyHited();//µ¯µ¯Çò¼ì²âÅö×²
-    void checkGestures(Path2D paths);//¼ì²âËù»­Í¼ĞÎ
-    void line();//³õÊ¼»¯Ïß
-    void draw();//ÖØÔØdrawº¯Êı
-    void erasureNail();//²Á³ı»­ÏßµÄÎ²°Í
+    void enemyHited();//å¼¹å¼¹çƒæ£€æµ‹ç¢°æ’
+    void checkGestures(Path2D paths);//æ£€æµ‹æ‰€ç”»å›¾å½¢
+    void line();//åˆå§‹åŒ–çº¿
+    void draw();//é‡è½½drawå‡½æ•°
+    void erasureNail();//æ“¦é™¤ç”»çº¿çš„å°¾å·´
     void removeSkillTexture();
-    void removeTouchDir(CCTouch *touch);//ÒÆ³ıµã»÷ÊÂ¼ş
+    void removeTouchDir(CCTouch *touch);//ç§»é™¤ç‚¹å‡»äº‹ä»¶
     void setEnemyType(EnemyRole *enemy);
     void triangle(CCPoint* vertex, CCPoint p1, CCPoint p2, GLfloat w) ;
     void skillLayerBegan(int skillId,Person *person,CCTouch *pTouch);

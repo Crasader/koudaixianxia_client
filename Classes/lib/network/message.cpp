@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  message.cpp
  *  test
  *  www.9miao.com

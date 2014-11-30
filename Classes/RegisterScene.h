@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  RegisterScene.h
 //  TestGame
 //
@@ -15,7 +15,7 @@ class RegisterScene:public CCLayer{
 public:
     virtual bool init();
     ~RegisterScene();
-    void judgePassWord();//ÅĞ¶ÏÁ½´ÎÃÜÂëÊÇ·ñÒ»ÖÂ
+    void judgePassWord();//åˆ¤æ–­ä¸¤æ¬¡å¯†ç æ˜¯å¦ä¸€è‡´
     CCSize m_winSize;
     CCMenu *m_pBtnMenu;
     bool btn_menuflag;
@@ -29,9 +29,9 @@ public:
     bool edit0;
     bool edit1;
     bool edit2;
-    void exitFunc();//ÍË³ö»Øµ÷º¯Êı
-    void sendRegisterMsg();//·¢ËÍ×¢²áÏûÏ¢
-    void reciveRegisterMsg(CCObject *obj);//·µ»Ø×¢²áÏûÏ¢
+    void exitFunc();//é€€å‡ºå›è°ƒå‡½æ•°
+    void sendRegisterMsg();//å‘é€æ³¨å†Œæ¶ˆæ¯
+    void reciveRegisterMsg(CCObject *obj);//è¿”å›æ³¨å†Œæ¶ˆæ¯
     
     virtual void  registerWithTouchDispatcher();
     virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event);

@@ -1,4 +1,4 @@
-//
+﻿//
 //  Strengthen.cpp
 //  TestGame
 //

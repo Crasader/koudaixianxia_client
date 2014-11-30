@@ -1,4 +1,4 @@
-//www.9miao.com
+﻿//www.9miao.com
 #ifndef _GestureTemplateIncluded_
 #define _GestureTemplateIncluded_
 

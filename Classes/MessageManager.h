@@ -1,4 +1,4 @@
-//
+﻿//
 //  MessageManager.h
 //  TestGame
 //

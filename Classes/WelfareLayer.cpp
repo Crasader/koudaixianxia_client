@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  WelfareLayer.cpp
 //  TestGame
 //
@@ -28,7 +28,7 @@ bool WelfareLayer::init(){
     isMoving=false;
     AnimatePacker::getInstance()->loadAnimations("lqcg.xml");
     CCSize winSize=CCDirector::sharedDirector()->getWinSize();
-    CCLabelTTF *nameLabel=CCLabelTTF::create("ÕâÀïÊÇÃû×Ö", SELF_TTF_ONE, 60, CCSizeMake(400, 60), kCCTextAlignmentLeft);
+    CCLabelTTF *nameLabel=CCLabelTTF::create("è¿™é‡Œæ˜¯åå­—", SELF_TTF_ONE, 60, CCSizeMake(400, 60), kCCTextAlignmentLeft);
     nameLabel->setAnchorPoint(ccp(0, 0));
     nameLabel->setColor(fontColor);
     nameLabel->setPosition(ccp(240, 880));
@@ -84,11 +84,11 @@ Welfare *wf=(Welfare *)m_welfareArr->objectAtIndex(idx);
     char coin[10]="";
     
     if (wf->icontype==1) {
-        sprintf(coin, "%d½ð±Ò",wf->number);
+        sprintf(coin, "%dé‡‘å¸",wf->number);
         money=CCSprite::create("gold.png");
         
     }else if(wf->icontype==2){
-        sprintf(coin, "%dÒø±Ò",wf->number);
+        sprintf(coin, "%dé“¶å¸",wf->number);
         money=CCSprite::create("coin.png");
         
     }

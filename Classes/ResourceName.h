@@ -1,4 +1,4 @@
-//
+﻿//
 //  ResourceName.h
 //  TestGame
 //
@@ -14,18 +14,18 @@
 #define ip		"127.0.0.1"
 #define ports  11009
 //command Id
-#define CMID_LOGIN 1001                  //��ҵ�½
-#define CMID_REGISTER 1002               //���ע��
-#define CMID_TEAMINFO 1103               //��ȡ�Ŷӽ�����Ϣ
-#define CMID_GETPETINFO 1104             //��ȡ��ս������ϸ��Ϣ
-#define CMID_GETPERMITENTERBATTLE 1202   //��ɫ������븱��
-#define CMID_EXITBATTLE 1204             //�رա��˳�����
-#define CMID_SENDBATTLESTRIKEINFO 1203   //��ɫ�ڸ�����ս����ֵ�Ϸ���֤
-#define CMID_GETAVAILABLEFB 1201         //��ȡ���߿���ս����id
-#define CMID_GETSTRENGTHENINFO 1401      //��ȡǿ��������Ϣ
-#define CMID_STRENGTHPET 1402            //ǿ������
-#define CMID_WELFARE 1501                //��������
-#define CMID_GETWELFARE 1520             //��ȡ����
+#define CMID_LOGIN 1001                  //玩家登陆
+#define CMID_REGISTER 1002               //玩家注册
+#define CMID_TEAMINFO 1103               //获取团队界面信息
+#define CMID_GETPETINFO 1104             //获取出战宠物详细信息
+#define CMID_GETPERMITENTERBATTLE 1202   //角色请求进入副本
+#define CMID_EXITBATTLE 1204             //关闭、退出副本
+#define CMID_SENDBATTLESTRIKEINFO 1203   //角色在副本中战斗数值合法验证
+#define CMID_GETAVAILABLEFB 1201         //获取主线可征战副本id
+#define CMID_GETSTRENGTHENINFO 1401      //获取强化界面信息
+#define CMID_STRENGTHPET 1402            //强化宠物
+#define CMID_WELFARE 1501                //福利界面
+#define CMID_GETWELFARE 1520             //领取福利
 //enemy range
 #define ENEMYATTACK_RANGE 200
 #define TRACETARGET_RANGE 170
@@ -113,7 +113,7 @@
 #define SELF_TTF_ONE "font.ttf"
 #endif
 
-#define SELF_TTF_TWO "����"
+#define SELF_TTF_TWO "黑体"
 
 
 //skill list

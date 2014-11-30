@@ -1,4 +1,4 @@
-#include "Util.h"
+ï»¿#include "Util.h"
 #include <stdlib.h>
 #include "ByteBuffer.h"
 #include "cocos2d.h"
@@ -65,7 +65,7 @@ const char* fullpathFromRelatePath(const char* relatePath){
 }
 
 /**
- ´æµµÂ·¾¶
+ å­˜æ¡£è·¯å¾„
  **/
 string getWriteableFullPath(const char* relatePath){
 	const char* relate = relatePath[0]=='/'?(relatePath+1):relatePath;
@@ -74,7 +74,7 @@ string getWriteableFullPath(const char* relatePath){
 	return relate;
 }
 /**
- writeFileData : pszfullFilepath ±ØĞëÊÇ´æµµÂ·¾¶
+ writeFileData : pszfullFilepath å¿…é¡»æ˜¯å­˜æ¡£è·¯å¾„
  **/
 bool writeSaveData(const char* relatePath,char* buf,int len){
 	string pszfullFilepath = getWriteableFullPath(relatePath);
@@ -226,9 +226,9 @@ void makeDirectory(const string& path){
 #endif
 	//	int a = access(root.c_str(), 0);
 	//	if (a == 0) {
-	//		//printf("´´½¨¶à¼¶Ä¿Â¼: ³É¹¦ path=%s\n", root.c_str());
+	//		//printf("åˆ›å»ºå¤šçº§ç›®å½•: æˆåŠŸ path=%s\n", root.c_str());
 	//	}else {
-	//		//printf("´´½¨¶à¼¶Ä¿Â¼: Ê§°Ü path=%s\n", root.c_str());
+	//		//printf("åˆ›å»ºå¤šçº§ç›®å½•: å¤±è´¥ path=%s\n", root.c_str());
 //	}
 }
 

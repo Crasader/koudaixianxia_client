@@ -1,4 +1,4 @@
-//
+﻿//
 //  HeaderBase.h
 //  TestGame
 //

@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  GameData.h
 //  TestGame
 //
@@ -33,19 +33,19 @@ public:
     void setTouchPoint(CCPoint pos);
     bool fire_Flag;
     std::string welfare_Str;
-    //³èÎï¼¯ºÏ
+    //å® ç‰©é›†åˆ
 //    ::google::protobuf::RepeatedPtrField< ::allPetInfo1101::PetFight > pfinfo_;
 //    void setPetFightArr(::google::protobuf::RepeatedPtrField< ::allPetInfo1101::PetFight > pfinfo);
 //    inline const ::google::protobuf::RepeatedPtrField< ::allPetInfo1101::PetFight >&
 //    pfinfo() const;
 //    inline const ::allPetInfo1101::PetFight& pfinfo(int index) const;
-//    //¸±±¾¼¯ºÏ
+//    //å‰¯æœ¬é›†åˆ
 //    ::google::protobuf::RepeatedPtrField< ::instanceInfo1201::Group > grouplist_;
 //    inline const ::google::protobuf::RepeatedPtrField< ::instanceInfo1201::Group >&
 //    grouplist() const;
 //    inline const ::instanceInfo1201::Group& grouplist(int index) const;
 //    void setGroupList(::google::protobuf::RepeatedPtrField< ::instanceInfo1201::Group > grouplist);
-//    //¹ÖÎï¼¯ºÏ
+//    //æ€ªç‰©é›†åˆ
 //    ::google::protobuf::RepeatedPtrField< ::MonsterInfo > mlist_;
 //    inline const ::MonsterInfo& mlist(int index) const;
 //    inline const ::google::protobuf::RepeatedPtrField< ::MonsterInfo >&
@@ -75,20 +75,20 @@ public:
     attackedInfo();
     ~attackedInfo();
 public:
-    int attacked_id;        //±»¹¥»÷Õßid
-    int attacked_curblood;//±»¹¥»÷Õßµ±Ç°ÑªÁ¿
-    int attacked_reduceblood;//±»¹¥»÷ÕßµôÑªÁ¿
+    int attacked_id;        //è¢«æ”»å‡»è€…id
+    int attacked_curblood;//è¢«æ”»å‡»è€…å½“å‰è¡€é‡
+    int attacked_reduceblood;//è¢«æ”»å‡»è€…æ‰è¡€é‡
 
 };
 class attackInfo{
 public:
     attackInfo();
     ~attackInfo();
-    int charid;//½ÇÉ«id
-    int attack_id;//µÚ¼¸²¨¹Ö
-    int countofAttack;//¹¥»÷Õßid
-    int skillId;//¹¥»÷Õß¼¼ÄÜID£»
-    std::string attack_time;//·¢¶¯¹¥»÷µÄÊ±¼ä
+    int charid;//è§’è‰²id
+    int attack_id;//ç¬¬å‡ æ³¢æ€ª
+    int countofAttack;//æ”»å‡»è€…id
+    int skillId;//æ”»å‡»è€…æŠ€èƒ½IDï¼›
+    std::string attack_time;//å‘åŠ¨æ”»å‡»çš„æ—¶é—´
 public:
     CCArray *attackeds;
     

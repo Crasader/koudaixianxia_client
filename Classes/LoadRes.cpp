@@ -1,4 +1,4 @@
-//
+﻿//
 //  LoadRes.cpp
 //  TestGame
 //

@@ -1,4 +1,4 @@
-//
+﻿//
 //  CCScrollViewX.h
 //  scrollView
 //

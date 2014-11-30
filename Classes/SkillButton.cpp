@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  SkillButton.cpp
 //  TestGame
 //
@@ -67,29 +67,29 @@ bool SkillButton::touchSkillBtn(cocos2d::CCTouch *pTouch){
         return false;
 }
 void SkillButton::SkillClickCallBack(cocos2d::CCObject *sender){
-    //µã»÷ºó¿ªÊ¼ÀäÈ´¼ÆÊ±£¬¼ÆÊ±×´Ì¬ÖÐ¼¼ÄÜ²»¿Éµã»÷
-    //¿ªÊ¼¼ÆÊ±£¬½«°ëÍ¸Ã÷ÃÉ°åÉèÖÃÎª¿É¼û
+    //ç‚¹å‡»åŽå¼€å§‹å†·å´è®¡æ—¶ï¼Œè®¡æ—¶çŠ¶æ€ä¸­æŠ€èƒ½ä¸å¯ç‚¹å‡»
+    //å¼€å§‹è®¡æ—¶ï¼Œå°†åŠé€æ˜Žè’™æ¿è®¾ç½®ä¸ºå¯è§
     this->stopAllActions();
     this->initWithSpriteFrameName(M_HQ_TX_FPNG);
     TouchEnable=false;
     spirte_block->setVisible(true);
-    //½«½ø¶ÈÌõ¾«ÁéÉèÖÃË³Ê±ÕëÐý×ª²¢¿É¼û
+    //å°†è¿›åº¦æ¡ç²¾çµè®¾ç½®é¡ºæ—¶é’ˆæ—‹è½¬å¹¶å¯è§
     progress_tiem_skill->setType(kCCProgressTimerTypeRadial);
     progress_tiem_skill->setVisible(true);
     CCCallFuncN* action_call_back = CCCallFuncN::create(this,callfuncN_selector(SkillButton::SKillCoolDownCallBack));
-    //×¼±¸Ò»¸ö5ÃëÐý×ª360¶ÈµÄ¶¯»­(Öð½¥¸²¸Ç°ëÍ¸Ä£°åÐÎ³ÉÀäÈ´Ð§¹û;ÕâÀï½øÐÐ¼ÆÊ±ÀäÈ´¶¯»­µÄÊµÏÖºÍÊ±¼ä¿ØÖÆ)
+    //å‡†å¤‡ä¸€ä¸ª5ç§’æ—‹è½¬360åº¦çš„åŠ¨ç”»(é€æ¸è¦†ç›–åŠé€æ¨¡æ¿å½¢æˆå†·å´æ•ˆæžœ;è¿™é‡Œè¿›è¡Œè®¡æ—¶å†·å´åŠ¨ç”»çš„å®žçŽ°å’Œæ—¶é—´æŽ§åˆ¶)
     action_progress_to = CCProgressTo::create(_time, 100);
-    //½ø¶ÈÌõ¾«Áé¿ªÊ¼²¥·ÅÒ»¸ö¶¯×÷ÐòÁÐ(Ðý×ª¶¯»­ + »Øµ÷º¯Êý(¼´¼¼ÄÜÀäÈ´½áÊøµÄ»Øµ÷º¯Êý))
+    //è¿›åº¦æ¡ç²¾çµå¼€å§‹æ’­æ”¾ä¸€ä¸ªåŠ¨ä½œåºåˆ—(æ—‹è½¬åŠ¨ç”» + å›žè°ƒå‡½æ•°(å³æŠ€èƒ½å†·å´ç»“æŸçš„å›žè°ƒå‡½æ•°))
     progress_tiem_skill->runAction(CCSequence::create(action_progress_to, action_call_back, NULL));
 }
 void SkillButton::SKillCoolDownCallBack(cocos2d::CCNode *sender){
     TouchEnable=true;
-    //ÉèÖÃÃÉ°åÎª²»¿É¼û
+    //è®¾ç½®è’™æ¿ä¸ºä¸å¯è§
     spirte_block->setVisible(false);
-    //½«½ø¶ÈÌõ¾«ÁéÉèÎª²»¿É¼û
+    //å°†è¿›åº¦æ¡ç²¾çµè®¾ä¸ºä¸å¯è§
     progress_tiem_skill->setVisible(false);
     
-    //ÈÃ¼¼ÄÜ°´Å¥»Ö¸´¿Éµã»÷×´Ì¬
+    //è®©æŠ€èƒ½æŒ‰é’®æ¢å¤å¯ç‚¹å‡»çŠ¶æ€
     this->runAction(CCRepeatForever::create(AnimatePacker::getInstance()->getAnimate(M_HQ_TX_DATA)));
 }
 

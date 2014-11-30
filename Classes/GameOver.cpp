@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  GameOver.cpp
 //  TestGame
 //
@@ -94,7 +94,7 @@ void GameOver::receiveGameOverMsg(float flt){
             }else{
                 
                 class MessageBox *msgbox=MessageBox::create();
-                msgbox->CMessageBox("´í Îó", "·¢Éú´íÎó!");
+                msgbox->CMessageBox("é”™ è¯¯", "å‘ç”Ÿé”™è¯¯!");
               //  CCDirector::sharedDirector()->getRunningScene()->addChild(msgbox,2);
             }
         }

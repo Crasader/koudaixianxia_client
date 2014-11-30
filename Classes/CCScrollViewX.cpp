@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  CCScrollViewX.cpp
 //  scrollView
 //
@@ -62,7 +62,7 @@ void CCScrollViewX::initWithBg(){
 
     for (int i=0; i<10; i++) {
         
-        CCLabelTTF * label=CCLabelTTF::create(CCString::createWithFormat("%d",i)->getCString(), "Î¢ÈíÑÅºÚ", 100);
+        CCLabelTTF * label=CCLabelTTF::create(CCString::createWithFormat("%d",i)->getCString(), "å¾®è½¯é›…é»‘", 100);
         m_array->addObject(label);
         
         

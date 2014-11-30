@@ -1,4 +1,4 @@
-//
+﻿//
 //  WelfareLayer.h
 //  TestGame
 //

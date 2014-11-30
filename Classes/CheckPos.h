@@ -1,4 +1,4 @@
-//
+﻿//
 //  CheckPos.h
 //  TestGame
 //

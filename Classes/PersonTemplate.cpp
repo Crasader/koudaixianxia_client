@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  PersonTemplate.cpp
 //  TestGame
 //
@@ -231,7 +231,7 @@ void Person::changeBlood(int changeBlood){
         char cb[10]="";
         sprintf(cb, "%d",changeBlood);
         
-        CCLabelTTF *reduceBlood=CCLabelTTF::create("", "ºÚÌå", 60);
+        CCLabelTTF *reduceBlood=CCLabelTTF::create("", "é»‘ä½“", 60);
         if (changeBlood>0) {
             reduceBlood->setColor(ccGREEN);
             sprintf(cb, "+%d",changeBlood);
@@ -255,7 +255,7 @@ void Person::changeBlood(int changeBlood){
         this->unscheduleAllSelectors();
         char cb[10]="";
         sprintf(cb, "%d",changeBlood);
-        CCLabelTTF *reduceBlood=CCLabelTTF::create(cb, "ºÚÌå", 60);
+        CCLabelTTF *reduceBlood=CCLabelTTF::create(cb, "é»‘ä½“", 60);
         reduceBlood->setColor(ccRED);
         reduceBlood->setPosition(ccp(m_role->getContentSize().width-250, m_role->getContentSize().height-200));
         CCMoveTo *move=CCMoveTo::create(0.8f, ccp(m_role->getContentSize().width-250, m_role->getContentSize().height+100));
@@ -287,9 +287,9 @@ void Person::setZ(){
 
 }
 void Person::motionType(PersonMotion per,int dir,const char* armname){
-//    m_role->getAnimation()->stop();//¹Ç÷À¶¯»­
+//    m_role->getAnimation()->stop();//éª¨éª¼åŠ¨ç”»
    
-    //¶¯×÷Àà¡£1ÅÜ²½£¬2Õ¾Á¢£¬3¹¥»÷£¬4ÊÜ»÷  dir 1.ÏòÓÒ  2.Ïò×ó
+    //åŠ¨ä½œç±»ã€‚1è·‘æ­¥ï¼Œ2ç«™ç«‹ï¼Œ3æ”»å‡»ï¼Œ4å—å‡»  dir 1.å‘å³  2.å‘å·¦
 //    if (dir==1) {
 //        m_role->setRotationY(0);
 //    }else{
@@ -315,7 +315,7 @@ void Person::motionType(PersonMotion per,int dir,const char* armname){
             //AnimatePacker::getInstance()->getAnimate(spriteframename)
             rep=CCRepeatForever::create(AnimatePacker::getInstance()->getAnimate(spriteframename));
             m_role->runAction(rep);
-//            m_role->init(armname);//¹Ç÷À¶¯»­
+//            m_role->init(armname);//éª¨éª¼åŠ¨ç”»
 //            m_role->getAnimation()->play("run");
             
             break;
@@ -497,7 +497,7 @@ void FriendlyRole::touchEvent(cocos2d::CCTouch *touch,bool touch_flag){
     CCNotificationCenter::sharedNotificationCenter()->postNotification("rolemove",this);
     this->stopAllActions();
     m_role->stopAllActions();
-    if (touch_flag) {//¹¥»÷
+    if (touch_flag) {//æ”»å‡»
 
         isAttacking=false;
         
@@ -535,7 +535,7 @@ void FriendlyRole::touchEvent(cocos2d::CCTouch *touch,bool touch_flag){
         trace->setTag(TOUCHATTACKACTION);
         this->runAction(trace);
         
-    }else{//ÅÜ²½
+    }else{//è·‘æ­¥
 
         CCPoint touchPoint= touch->getLocation();
         isRunning=true;
@@ -709,7 +709,7 @@ void FriendlyRole::judgePos(){
     if (this->getPosition().x-this->target->getPosition().x>0&&this->getPosition().x-this->target->getPosition().x<NEAR_MINATTACKRANGE) {
         isRunning=true;
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡û  ÏÂ");
+            CCLog("â†  ä¸‹");
             aniDir=2;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA1);
             float distance=ccpDistance(this->getPosition(), ccp(this->target->getPosition().x+NEAR_MAXATTACKRANGE, this->target->getPosition().y));
@@ -718,7 +718,7 @@ void FriendlyRole::judgePos(){
             CCSequence *seq=CCSequence::create(moveToPos,func,NULL);
             this->runAction(seq);
         }else{
-            CCLog("¡û  ÉÏ");
+            CCLog("â†  ä¸Š");
             aniDir=2;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA1);
             float distance=ccpDistance(this->getPosition(), ccp(this->target->getPosition().x+NEAR_MAXATTACKRANGE, this->target->getPosition().y));
@@ -730,7 +730,7 @@ void FriendlyRole::judgePos(){
     }else if(this->getPosition().x-this->target->getPosition().x<=0&&this->getPosition().x-this->target->getPosition().x>-NEAR_MINATTACKRANGE){
         isRunning=true;
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡ú  ÏÂ");
+            CCLog("â†’  ä¸‹");
             aniDir=1;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA1);
             
@@ -740,7 +740,7 @@ void FriendlyRole::judgePos(){
             CCSequence *seq=CCSequence::create(moveToPos,func,NULL);
             this->runAction(seq);
         }else{
-            CCLog("¡ú  ÉÏ");
+            CCLog("â†’  ä¸Š");
             aniDir=1;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA1);
             
@@ -873,7 +873,7 @@ void CureRole::touchEvent(cocos2d::CCTouch *touch, bool touch_flag){
     
     this->schedule(schedule_selector(CureRole::setZs));
     
-    if (touch_flag) {//ÖÎÁÆ
+    if (touch_flag) {//æ²»ç–—
         m_role->stopAllActions();
         this->stopAllActions();
         if (isCure) {
@@ -890,7 +890,7 @@ void CureRole::touchEvent(cocos2d::CCTouch *touch, bool touch_flag){
         }
         
         
-    }else{//ÅÜ²½
+    }else{//è·‘æ­¥
         m_role->stopAllActions();
         this->stopAllActions();
         CCPoint touchPoint= touch->getLocation();
@@ -1096,7 +1096,7 @@ void EnemyRole::roleDead(){
     this->getChildByTag(BLOOD)->setVisible(false);
     target=NULL;
     this->stopAllActions();
-//    this->m_role->getAnimation()->stop();//¹Ç÷À¶¯»­
+//    this->m_role->getAnimation()->stop();//éª¨éª¼åŠ¨ç”»
   //  m_role->stopActionByTag(00000);
     this->m_role->stopAllActions();
     
@@ -1120,7 +1120,7 @@ void EnemyRole::roleDead(){
 void EnemyRole::releaseSkillControl(float flt){
     
     if (releaseTime==0) {
-        //ÊÍ·Å¼¼ÄÜ
+        //é‡Šæ”¾æŠ€èƒ½
         if(skillId==1){
 //            m_role->getAnimation()->stop();
            // m_role->stopActionByTag(00000);
@@ -1147,7 +1147,7 @@ void EnemyRole::releaseSkillControl(float flt){
         releaseTime--;
         
     }else{
-        CCLOG("³ö´íÁË£¡");
+        CCLOG("å‡ºé”™äº†ï¼");
         return;
     }
     if (this->type==2) {
@@ -1240,7 +1240,7 @@ void EnemyRole::judgeSelfPos(){
         this->stopAllActions();
         ismoveing=true;
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡û  ÏÂ");
+            CCLog("â†  ä¸‹");
             aniDir=2;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA5);
             
@@ -1251,7 +1251,7 @@ void EnemyRole::judgeSelfPos(){
             seq->setTag(1001);
             this->runAction(seq);
         }else{
-            CCLog("¡û  ÉÏ");
+            CCLog("â†  ä¸Š");
             aniDir=2;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA5);
             
@@ -1270,7 +1270,7 @@ void EnemyRole::judgeSelfPos(){
         this->stopAllActions();
         
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡ú  ÏÂ");
+            CCLog("â†’  ä¸‹");
             aniDir=1;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA5);
             
@@ -1282,7 +1282,7 @@ void EnemyRole::judgeSelfPos(){
             seq->setTag(1001);
             this->runAction(seq);
         }else{
-            CCLog("¡ú  ÉÏ");
+            CCLog("â†’  ä¸Š");
             aniDir=1;
             motionType(RUN, aniDir, ARMATURE_ACTION_DATA5);
             
@@ -1474,7 +1474,7 @@ void MasterRole::touchEvent(cocos2d::CCTouch *touch, bool touch_flag){
     this->unscheduleAllSelectors();
     
     this->schedule(schedule_selector(MasterRole::setZs));
-    if (touch_flag) {//Ô¶³Ì
+    if (touch_flag) {//è¿œç¨‹
         m_strongTouch=false;
         isMoving=false;
         isRunning=false;
@@ -1498,7 +1498,7 @@ void MasterRole::touchEvent(cocos2d::CCTouch *touch, bool touch_flag){
             }
             
         }
-    }else{//ÅÜ²½
+    }else{//è·‘æ­¥
         m_strongTouch=false;
         isMoving=false;
         isRunning=true;
@@ -1810,7 +1810,7 @@ void EnemyLongRangeBoss::judgeSelfPos(){
         isRunning=true;
         this->stopActionByTag(1001);
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡û  ÏÂ");
+            CCLog("â†  ä¸‹");
             motionType(RUN, 2, ARMATURE_ACTION_DATA5);
             aniDir=2;
             float distance=ccpDistance(this->getPosition(), ccp(this->target->getPosition().x+150, this->target->getPosition().y));
@@ -1820,7 +1820,7 @@ void EnemyLongRangeBoss::judgeSelfPos(){
             seq->setTag(1001);
             this->runAction(seq);
         }else{
-            CCLog("¡û  ÉÏ");
+            CCLog("â†  ä¸Š");
             motionType(RUN, 2, ARMATURE_ACTION_DATA5);
             aniDir=2;
             float distance=ccpDistance(this->getPosition(), ccp(this->target->getPosition().x+150, this->target->getPosition().y));
@@ -1834,7 +1834,7 @@ void EnemyLongRangeBoss::judgeSelfPos(){
         isRunning=true;
         this->stopActionByTag(1001);
         if (this->target->getPosition().y>this->getPosition().y) {
-            CCLog("¡ú  ÏÂ");
+            CCLog("â†’  ä¸‹");
             motionType(RUN, 1, ARMATURE_ACTION_DATA5);
             aniDir=1;
             
@@ -1845,7 +1845,7 @@ void EnemyLongRangeBoss::judgeSelfPos(){
             seq->setTag(1001);
             this->runAction(seq);
         }else{
-            CCLog("¡ú  ÉÏ");
+            CCLog("â†’  ä¸Š");
             motionType(RUN, 1, ARMATURE_ACTION_DATA5);
             aniDir=1;
             float distance=ccpDistance(this->getPosition(), ccp(this->target->getPosition().x-150, this->target->getPosition().y));

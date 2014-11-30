@@ -1,4 +1,4 @@
-//www.9miao.com
+﻿//www.9miao.com
 #include "GeometricRecognizer.h"
 #include <cmath>
 #define MAX_DOUBLE std::numeric_limits<double>::max();

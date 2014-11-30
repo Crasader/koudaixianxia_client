@@ -1,4 +1,4 @@
-//
+﻿//
 //  CheckPos.cpp
 //  TestGame
 //

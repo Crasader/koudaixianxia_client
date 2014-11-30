@@ -1,4 +1,4 @@
-#ifndef _ANIMATE_PACKER_H_
+﻿#ifndef _ANIMATE_PACKER_H_
 #define _ANIMATE_PACKER_H_
 
 #include <string>

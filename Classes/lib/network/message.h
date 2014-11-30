@@ -1,4 +1,4 @@
-//www.9miao.com
+ï»¿//www.9miao.com
 
 #ifndef MESSAGE_H
 #define MESSAGE_H
@@ -11,21 +11,21 @@ typedef signed char byte;
 typedef bool boolean;
 #endif
 using namespace cocos2d;
-//Á¬½ÓÊ§°Ü
+//è¿æ¥å¤±è´¥
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_CONNECT_FAIL = 0xfffffA01;
-//ÍøÂçÒì³£ÖĞ¶Ï
+//ç½‘ç»œå¼‚å¸¸ä¸­æ–­
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_CONNECT_TERMINATE = 0xfffffA02;
-//·şÎñÆ÷¹Ø±ÕÁ¬½Ó
+//æœåŠ¡å™¨å…³é—­è¿æ¥
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_SERVER_CLOSE_CONNECTION = 0xfffffA03;
-//ÏûÏ¢·¢²¼³öÈ¥£¨ĞÅºÅºÜ²î£©
+//æ¶ˆæ¯å‘å¸ƒå‡ºå»ï¼ˆä¿¡å·å¾ˆå·®ï¼‰
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_CANNOT_SEND_MESSAGE = 0xfffffA04;
-//ÌáÊ¾ÍøÂç¿ÉÄÜ³öÎÊÌâÁË
+//æç¤ºç½‘ç»œå¯èƒ½å‡ºé—®é¢˜äº†
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_IDLE_TIMEOUT = 0xfffffA05;
-//ÌáÊ¾ÍøÂç¿ÉÄÜ³öÎÊÌâÁË,¿ÉÒÔÍË³öµ½µÇÂ¼
+//æç¤ºç½‘ç»œå¯èƒ½å‡ºé—®é¢˜äº†,å¯ä»¥é€€å‡ºåˆ°ç™»å½•
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_RECONNECT_HINT = 0xfffffA06;
-//ÌáÊ¾ÍøÂç¿ÉÄÜ³öÎÊÌâÁË,±ØĞëÍË³öµ½µÇÂ¼
+//æç¤ºç½‘ç»œå¯èƒ½å‡ºé—®é¢˜äº†,å¿…é¡»é€€å‡ºåˆ°ç™»å½•
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_RECONNECT_FORCE = 0xfffffA07;
-//´íÎóÌáÊ¾
+//é”™è¯¯æç¤º
 static const unsigned int TYPE_SELF_DEINE_MESSAGE_ERROR_MESSAGE = 0xfffffA08;
 
 //
@@ -46,7 +46,7 @@ public:
     byte length[4];
     byte commandId[4];
     /**
-      * ÏûÏ¢µÄÊı¾İ
+      * æ¶ˆæ¯çš„æ•°æ®
       */
     //std::string data;
     char* data;

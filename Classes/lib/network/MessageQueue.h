@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  MessageQueue.h
 //  client1
 //  www.9miao.com
@@ -21,7 +21,7 @@ public:
   
     ~MessageQueue();
 static MessageQueue* getMessage();
-    //»ñÈ¡°ü
+    //è·å–åŒ…
     
     Message* getMessagedata(int commandId);
     void sendMessage(Message * data,bool flag);

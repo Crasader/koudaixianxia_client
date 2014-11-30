@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  RegisterScene.cpp
 //  TestGame
 //
@@ -122,9 +122,9 @@ void RegisterScene::reciveRegisterMsg(CCObject *obj){
             GameData::shareGameData()->gold=root["gold"].asInt();
             GameData::shareGameData()->coin=root["silverMoney"].asInt();
         }
-		// ²âÊÔ´úÂë
+		// æµ‹è¯•ä»£ç 
         CCUserDefault::sharedUserDefault()->setStringForKey("1", "1");
-		// ±£´æ×¢²áµÄÕËºÅºÍÃÜÂë
+		// ä¿å­˜æ³¨å†Œçš„è´¦å·å’Œå¯†ç 
 		CCUserDefault::sharedUserDefault()->setStringForKey("user", m_pEditBox2->getText());
         CCUserDefault::sharedUserDefault()->setStringForKey("password", m_pEditBox1->getText());
         CCUserDefault::sharedUserDefault()->flush();
@@ -143,17 +143,17 @@ void RegisterScene::judgePassWord(){
     if (!strcmp(m_pEditBox2->getText(), "")) {
 
         class MessageBox *msgbox = MessageBox::create();
-        msgbox->CMessageBox("Ìá  Ê¾", "ÕË»§Ãû²»ÄÜÎª¿Õ");
+        msgbox->CMessageBox("æ  ç¤º", "è´¦æˆ·åä¸èƒ½ä¸ºç©º");
        // CCDirector::sharedDirector()->getRunningScene()->addChild(msgbox,2);
     }else if(!strcmp(m_pEditBox1->getText(), "")||!strcmp(m_pEditBox0->getText(), "")){
 
         class MessageBox *msgbox=MessageBox::create();
-        msgbox->CMessageBox("Ìá  Ê¾", "ÃÜÂë²»ÄÜÎª¿Õ");
+        msgbox->CMessageBox("æ  ç¤º", "å¯†ç ä¸èƒ½ä¸ºç©º");
        // CCDirector::sharedDirector()->getRunningScene()->addChild(msgbox,2);
     }else if(strcmp(m_pEditBox0->getText(), m_pEditBox1->getText())){
 
         class MessageBox *msgbox=MessageBox::create();
-        msgbox->CMessageBox("Ìá  Ê¾", "Á½´ÎÊäÈëµÄÃÜÂë²»Í¬");
+        msgbox->CMessageBox("æ  ç¤º", "ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸åŒ");
        // CCDirector::sharedDirector()->getRunningScene()->addChild(msgbox,2);
     }else{
         sendRegisterMsg();

@@ -1,4 +1,4 @@
-//www.9miao.com
+ï»¿//www.9miao.com
 #ifndef BYTE_BUFFER_H
 #define BYTE_BUFFER_H
 #include "Util.h"
@@ -85,7 +85,7 @@ public:
 	float getFloat();
 	short getShort();
 	
-	//Õâ¸ö·½·¨Ö»ÄÜÓÃÓÚ´ò¿ªµÄÊÇÎÄ±¾ÎÄ¼şµÄÊ±ºò
+	//è¿™ä¸ªæ–¹æ³•åªèƒ½ç”¨äºæ‰“å¼€çš„æ˜¯æ–‡æœ¬æ–‡ä»¶çš„æ—¶å€™
 	String getLine();
 	
 	long long getLong();
