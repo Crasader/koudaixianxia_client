@@ -122,9 +122,11 @@ void RegisterScene::reciveRegisterMsg(CCObject *obj){
             GameData::shareGameData()->gold=root["gold"].asInt();
             GameData::shareGameData()->coin=root["silverMoney"].asInt();
         }
-//        CCUserDefault::sharedUserDefault()->setStringForKey("user", m_pEditBox2->getText());
+		// ²âÊÔ´úÂë
         CCUserDefault::sharedUserDefault()->setStringForKey("1", "1");
-//        CCUserDefault::sharedUserDefault()->setStringForKey("password", m_pEditBox1->getText());
+		// ±£´æ×¢²áµÄÕËºÅºÍÃÜÂë
+		CCUserDefault::sharedUserDefault()->setStringForKey("user", m_pEditBox2->getText());
+        CCUserDefault::sharedUserDefault()->setStringForKey("password", m_pEditBox1->getText());
         CCUserDefault::sharedUserDefault()->flush();
         CCLog("%d",CCUserDefault::sharedUserDefault()->isXMLFileExist());
         CCLog("%s",CCUserDefault::sharedUserDefault()->getXMLFilePath().c_str());
