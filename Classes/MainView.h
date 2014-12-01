@@ -15,6 +15,7 @@
 #include "MessageManager.h"
 #include "message.h"
 
+// 登陆后的主界面
 class MainView:public CCLayer{
 public:
     vector<string> fbtexture;

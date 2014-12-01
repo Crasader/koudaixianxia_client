@@ -66,7 +66,7 @@ public:
     CCDictionary *eneDic;
     CCArray *roleArr;
     CCArray *posArr;
-    CCArray *enemyArr;
+    CCArray *enemyArr;				// 怪我数组
     CCDictionary * msg_dic;
     CCPoint point;
 };

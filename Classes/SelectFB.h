@@ -14,6 +14,9 @@
 #include "LoadingLayer.h"
 #include "SocketClient.h"
 
+// 战斗选择	FB-fight battle
+// 主线、挑战、竞技、无尽、活动
+// 小队阵容
 class SelectFB:public CCLayer{
 public:
     virtual bool init();
@@ -25,7 +28,7 @@ public:
     CCSize size;
     CCString * str;
     char *jsonData;
-    std::string str_callback;
+    std::string str_callback;		// iname项，关卡名称
     SocketClient * socket;
     LoadingLayer * loading;
     UILayer * layer;
@@ -35,6 +38,7 @@ public:
     void sendJsonData();
     void receiveJsonData(CCObject *obj);//
     void  setData(float flt);
+	// 创建怪我
     void initEnemys(int eneId,int i);
     void addLoadingLayer();
     void addUILayer();
