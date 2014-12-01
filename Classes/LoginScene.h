@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  LoginScene.h
 //  TestGame
 //
@@ -30,7 +30,7 @@ private:
     vector<string> m_vResourceArray;
     int m_nPid ;
     bool m_bRegisterBtn;
-    float g_fGap;//µã»÷btn¸úÃªµãÖ®¼äµÄ²îÖµ
+    float g_fGap;//ç‚¹å‡»btnè·Ÿé”šç‚¹ä¹‹é—´çš„å·®å€¼
     float g_fDis;
     bool m_bLoginFlag;
     CCMenu *m_pLoginMenu;

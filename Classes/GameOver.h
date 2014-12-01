@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  GameOver.h
 //  TestGame
 //
@@ -20,9 +20,9 @@ public:
     virtual bool init();
     SocketClient * socket;
     UILayer *layer;
-    void sendGameOverMsg();//·¢ËÍÕ½¶·½áÊøĞÅÏ¢
-    void receiveGameOverMsg(float flt);//½ÓÊÕÕ½¶·½áÊøĞÅÏ¢
-    void showRoleExp();//ÏÔÊ¾Õ½¶·½á¹û
+    void sendGameOverMsg();//å‘é€æˆ˜æ–—ç»“æŸä¿¡æ¯
+    void receiveGameOverMsg(float flt);//æ¥æ”¶æˆ˜æ–—ç»“æŸä¿¡æ¯
+    void showRoleExp();//æ˜¾ç¤ºæˆ˜æ–—ç»“æœ
     virtual void registerWithTouchDispatcher();
     virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event);
     virtual void ccTouchMoved(CCTouch* touch, CCEvent* event);

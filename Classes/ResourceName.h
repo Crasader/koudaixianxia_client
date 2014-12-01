@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  ResourceName.h
 //  TestGame
 //
@@ -10,21 +10,22 @@
 #define TestGame_ResourceName_h
 /* Resource Name*/
 //ip port
-#define ip "10.0.0.101"
+// #define ip "10.0.0.101"
+#define ip		"127.0.0.1"
 #define ports  11009
 //command Id
-#define CMID_LOGIN 1001                  //Íæ¼ÒµÇÂ½
-#define CMID_REGISTER 1002               //Íæ¼Ò×¢²á
-#define CMID_TEAMINFO 1103               //»ñÈ¡ÍÅ¶Ó½çÃæĞÅÏ¢
-#define CMID_GETPETINFO 1104             //»ñÈ¡³öÕ½³èÎïÏêÏ¸ĞÅÏ¢
-#define CMID_GETPERMITENTERBATTLE 1202   //½ÇÉ«ÇëÇó½øÈë¸±±¾
-#define CMID_EXITBATTLE 1204             //¹Ø±Õ¡¢ÍË³ö¸±±¾
-#define CMID_SENDBATTLESTRIKEINFO 1203   //½ÇÉ«ÔÚ¸±±¾ÖĞÕ½¶·ÊıÖµºÏ·¨ÑéÖ¤
-#define CMID_GETAVAILABLEFB 1201         //»ñÈ¡Ö÷Ïß¿ÉÕ÷Õ½¸±±¾id
-#define CMID_GETSTRENGTHENINFO 1401      //»ñÈ¡Ç¿»¯½çÃæĞÅÏ¢
-#define CMID_STRENGTHPET 1402            //Ç¿»¯³èÎï
-#define CMID_WELFARE 1501                //¸£Àû½çÃæ
-#define CMID_GETWELFARE 1520             //ÁìÈ¡¸£Àû
+#define CMID_LOGIN 1001                  //ç©å®¶ç™»é™†
+#define CMID_REGISTER 1002               //ç©å®¶æ³¨å†Œ
+#define CMID_TEAMINFO 1103               //è·å–å›¢é˜Ÿç•Œé¢ä¿¡æ¯
+#define CMID_GETPETINFO 1104             //è·å–å‡ºæˆ˜å® ç‰©è¯¦ç»†ä¿¡æ¯
+#define CMID_GETPERMITENTERBATTLE 1202   //è§’è‰²è¯·æ±‚è¿›å…¥å‰¯æœ¬
+#define CMID_EXITBATTLE 1204             //å…³é—­ã€é€€å‡ºå‰¯æœ¬
+#define CMID_SENDBATTLESTRIKEINFO 1203   //è§’è‰²åœ¨å‰¯æœ¬ä¸­æˆ˜æ–—æ•°å€¼åˆæ³•éªŒè¯
+#define CMID_GETAVAILABLEFB 1201         //è·å–ä¸»çº¿å¯å¾æˆ˜å‰¯æœ¬id
+#define CMID_GETSTRENGTHENINFO 1401      //è·å–å¼ºåŒ–ç•Œé¢ä¿¡æ¯
+#define CMID_STRENGTHPET 1402            //å¼ºåŒ–å® ç‰©
+#define CMID_WELFARE 1501                //ç¦åˆ©ç•Œé¢
+#define CMID_GETWELFARE 1520             //é¢†å–ç¦åˆ©
 //enemy range
 #define ENEMYATTACK_RANGE 200
 #define TRACETARGET_RANGE 170
@@ -112,7 +113,7 @@
 #define SELF_TTF_ONE "font.ttf"
 #endif
 
-#define SELF_TTF_TWO "ºÚÌå"
+#define SELF_TTF_TWO "é»‘ä½“"
 
 
 //skill list

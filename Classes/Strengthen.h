@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  Strengthen.h
 //  TestGame
 //
@@ -22,9 +22,9 @@ public:
     SocketClient *socket;
     CCScrollViewX *scrollview;
     bool scrollFlag;
-    void initLoadingLayer();//add ¼ÓÔØÒ³Ãæ
-    void changeScene();//¸ü»»³¡¾° »Øµ½Ö÷½çÃæ
-    void EaseInAndOut();//ÇĞ»»¶¯»­
+    void initLoadingLayer();//add åŠ è½½é¡µé¢
+    void changeScene();//æ›´æ¢åœºæ™¯ å›åˆ°ä¸»ç•Œé¢
+    void EaseInAndOut();//åˆ‡æ¢åŠ¨ç”»
     LoadingLayer *loadlayer;
     CCPoint m_beginPoint;
     CCMenu *goback_menu;
@@ -33,12 +33,12 @@ public:
     int numflag;
     int oldnumflag;
     bool hasRole;
-    void getStrengt();//·¢ËÍÇ¿»¯½çÃæÊı¾İ
-    void initBaseProperty(float flt);//³õÊ¼»¯Ç¿»¯½çÃæ
-    void analyzeData(std::string data);//½âÎöÊı¾İ
-    void setStentgt(float flt);//ÉèÖÃÊı¾İ
-    void sendStrengthen(CCObject *obj);//·¢ËÍÇ¿»¯Êı¾İ
-    void reciveStrengthen(CCObject *obj);//½ÓÊÕÇ¿»¯Êı¾İ
+    void getStrengt();//å‘é€å¼ºåŒ–ç•Œé¢æ•°æ®
+    void initBaseProperty(float flt);//åˆå§‹åŒ–å¼ºåŒ–ç•Œé¢
+    void analyzeData(std::string data);//è§£ææ•°æ®
+    void setStentgt(float flt);//è®¾ç½®æ•°æ®
+    void sendStrengthen(CCObject *obj);//å‘é€å¼ºåŒ–æ•°æ®
+    void reciveStrengthen(CCObject *obj);//æ¥æ”¶å¼ºåŒ–æ•°æ®
     void receiveNotice(CCObject *obj);
     virtual bool init();
     const char *json_strs;
@@ -49,7 +49,7 @@ public:
     int m_nCurPage;
     CSJson::Value teamInfo;
     int  m_nPageCount;
-    void finishedInit(CCObject *obj);//³õÊ¼»¯Íê³É
+    void finishedInit(CCObject *obj);//åˆå§‹åŒ–å®Œæˆ
     virtual void  registerWithTouchDispatcher();
     virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event);
     virtual void ccTouchMoved(CCTouch* touch, CCEvent* event);
@@ -61,27 +61,27 @@ private:
 };
 class StengthenList:public CCObject{
 public:
-    int djcostMoney;//±¾´ÎÇ¿»¯£¨¶É½Ù£©ÏûºÄ½ğÇ®
-    int hpcostMoney;//Ç¿»¯ÉúÃüµ½ÏÂÒ»µÈ¼¶ËùĞè½ğÇ® 0±íÊ¾ÒÑµ½ÉÏÏŞ 1±íÊ¾²»±ä
-    int attcostMoney;//Ç¿»¯¹¥»÷µ½ÏÂÒ»µÈ¼¶ËùĞè½ğÇ®   ¹æÔòÍ¬ÉÏ
-    int addHp;//±¾´Î²Ù×÷ÉúÃüËù¼ÓÊôĞÔ
-    int addAtt;//±¾´Î²Ù×÷¹¥»÷Ëù¼ÓÊôĞÔ
-    int luck;//ĞÒÔËÖµ
-    int newfighting;//Ç¿»¯ºóĞ¡¶ÓÕ½¶·Á¦  0±íÊ¾²»±ä
-    int newlevellimit;//¶É½ÙºóÇ¿»¯µÈ¼¶ÉÏÏŞ 0±íÊ¾²»±ä
-    int newcolor;//¶É½ÙºóµÄÃû×ÖÑÕÉ« 0±íÊ¾²»±ä 1°× 2À¶ 3×Ï 4³È
+    int djcostMoney;//æœ¬æ¬¡å¼ºåŒ–ï¼ˆæ¸¡åŠ«ï¼‰æ¶ˆè€—é‡‘é’±
+    int hpcostMoney;//å¼ºåŒ–ç”Ÿå‘½åˆ°ä¸‹ä¸€ç­‰çº§æ‰€éœ€é‡‘é’± 0è¡¨ç¤ºå·²åˆ°ä¸Šé™ 1è¡¨ç¤ºä¸å˜
+    int attcostMoney;//å¼ºåŒ–æ”»å‡»åˆ°ä¸‹ä¸€ç­‰çº§æ‰€éœ€é‡‘é’±   è§„åˆ™åŒä¸Š
+    int addHp;//æœ¬æ¬¡æ“ä½œç”Ÿå‘½æ‰€åŠ å±æ€§
+    int addAtt;//æœ¬æ¬¡æ“ä½œæ”»å‡»æ‰€åŠ å±æ€§
+    int luck;//å¹¸è¿å€¼
+    int newfighting;//å¼ºåŒ–åå°é˜Ÿæˆ˜æ–—åŠ›  0è¡¨ç¤ºä¸å˜
+    int newlevellimit;//æ¸¡åŠ«åå¼ºåŒ–ç­‰çº§ä¸Šé™ 0è¡¨ç¤ºä¸å˜
+    int newcolor;//æ¸¡åŠ«åçš„åå­—é¢œè‰² 0è¡¨ç¤ºä¸å˜ 1ç™½ 2è“ 3ç´« 4æ©™
     void setNewProperties(int djmoney,int hpmoney1,int attmoney1,int addhp,int addatt,int luck,int newfighting,int newlevellimit,int newcolor);
-    std::string name;//»ï°éÃû³Æ
-    int level;//µ±Ç°Ç¿»¯µÈ¼¶
-    int levellimit;//Ç¿»¯µÈ¼¶ÉÏÏŞ
-    int resource;//×ÊÔ´id
-    int headid;//Í·Ïñid
-    int color;//Ãû³ÆÑÕÉ« 1°× 2À¶ 3×Ï 4³È
-    int hp;//Ç¿»¯Ôö¼ÓµÄÉùÃ÷
-    int hpmoney;//Ç¿»¯ÉúÃüµ½ÏÂÒ»¼¶ËùĞè½ğÇ® 0±íÊ¾´ïµ½ÉÏÏŞ
-    int att;//Ç¿»¯Ôö¼ÓµÄ¹¥»÷
-    int attmoney;//Ç¿»¯¹¥»÷µ½ÏÂÒ»µÈ¼¶ËùĞèÒªµÄ½ğÇ®  0±íÊ¾´ïµ½ÉÏÏŞ
-    int status;//¶É½ÙËùĞè½ğÇ®  0±íÊ¾ÒÑµ½ÉÏÏŞ
+    std::string name;//ä¼™ä¼´åç§°
+    int level;//å½“å‰å¼ºåŒ–ç­‰çº§
+    int levellimit;//å¼ºåŒ–ç­‰çº§ä¸Šé™
+    int resource;//èµ„æºid
+    int headid;//å¤´åƒid
+    int color;//åç§°é¢œè‰² 1ç™½ 2è“ 3ç´« 4æ©™
+    int hp;//å¼ºåŒ–å¢åŠ çš„å£°æ˜
+    int hpmoney;//å¼ºåŒ–ç”Ÿå‘½åˆ°ä¸‹ä¸€çº§æ‰€éœ€é‡‘é’± 0è¡¨ç¤ºè¾¾åˆ°ä¸Šé™
+    int att;//å¼ºåŒ–å¢åŠ çš„æ”»å‡»
+    int attmoney;//å¼ºåŒ–æ”»å‡»åˆ°ä¸‹ä¸€ç­‰çº§æ‰€éœ€è¦çš„é‡‘é’±  0è¡¨ç¤ºè¾¾åˆ°ä¸Šé™
+    int status;//æ¸¡åŠ«æ‰€éœ€é‡‘é’±  0è¡¨ç¤ºå·²åˆ°ä¸Šé™
     int ppid;
     StengthenList();
     ~StengthenList();

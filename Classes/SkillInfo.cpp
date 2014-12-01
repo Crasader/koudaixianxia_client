@@ -1,4 +1,4 @@
-//
+﻿//
 //  SkillInfo.cpp
 //  TestGame
 //

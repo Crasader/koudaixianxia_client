@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  *  SocketClient.h
  *  test
  *  www.9miao.com
@@ -56,48 +56,48 @@ public:
 	char m_clientId;
 	string m_host;
 	int m_iport;
-//    static cocos2d::CCDictionary * m_dictionary;    //´æ·Å½ÓÊÕµÄÊı¾İ
+//    static cocos2d::CCDictionary * m_dictionary;    //å­˜æ”¾æ¥æ”¶çš„æ•°æ®
 	vector<char> m_serverId2;
 	vector<char> m_clientId2;
 	vector<string> m_host2;
-	vector<int> m_iport2;//Á´½Ó·şÎñÆ÷1Ê§°Üºó£¬Èç¹û·şÎñÆ÷2´æÔÚ½«Á¬·şÎñÆ÷2
+	vector<int> m_iport2;//é“¾æ¥æœåŠ¡å™¨1å¤±è´¥åï¼Œå¦‚æœæœåŠ¡å™¨2å­˜åœ¨å°†è¿æœåŠ¡å™¨2
 	
-	//·¢ËÍºÍ½ÓÊÕ»º³åÇø£¬·¢ËÍ»º³åÇøÂúµÄÊ±ºò£¬»á¶Ï¿ªÁ¬½Ó£¬²¢ÌáÊ¾ĞÅºÅ²»ºÃ
+	//å‘é€å’Œæ¥æ”¶ç¼“å†²åŒºï¼Œå‘é€ç¼“å†²åŒºæ»¡çš„æ—¶å€™ï¼Œä¼šæ–­å¼€è¿æ¥ï¼Œå¹¶æç¤ºä¿¡å·ä¸å¥½
 	ByteBuffer m_cbRecvBuf;
 	ByteBuffer m_cbSendBuf;
 	
-	//ÊÕµ½·şÎñ¶ËÏûÏ¢
+	//æ”¶åˆ°æœåŠ¡ç«¯æ¶ˆæ¯
 	queue<Message*> m_receivedMessageQueue;
 	
-	//ĞèÒª·¢ËÍµ½·şÎñ¶ËµÄÏûÏ¢
+	//éœ€è¦å‘é€åˆ°æœåŠ¡ç«¯çš„æ¶ˆæ¯
 	queue<Message*> m_sendMessageQueue;
 	
 	int m_iState;
 	MessageHandler* m_pHandler;
 	
-	//½ÓÊÕÏß³Ì
+	//æ¥æ”¶çº¿ç¨‹
 	bool m_bThreadRecvCreated;
 	pthread_t pthread_t_receive;
 	
-	//·¢ËÍÏß³Ì
+	//å‘é€çº¿ç¨‹
 	bool m_bThreadSendCreated;
 	pthread_t pthread_t_send;
-	pthread_mutex_t m_thread_cond_mutex;//pthread_mutex_t »¥³âËø
+	pthread_mutex_t m_thread_cond_mutex;//pthread_mutex_t äº’æ–¥é”
 	pthread_cond_t m_threadCond;
 	
-    //ÁÄÌìÏß³Ì
+    //èŠå¤©çº¿ç¨‹
     bool m_bThreadChatCreated;
     pthread_t pthread_t_chat;
     pthread_mutex_t m_thread_chat_mutex;
     //pthread_cond_t m_threadCond;
-	//·¢ËÍ¶ÓÁĞÍ¬²½Ëø
+	//å‘é€é˜Ÿåˆ—åŒæ­¥é”
 	pthread_mutex_t m_sendqueue_mutex;
 	
 	bool m_isvalidSeq;
 	long long m_sabcde[6];
 	long long getSeq();
 private:
-	//Á¬½Ó·şÎñÆ÷
+	//è¿æ¥æœåŠ¡å™¨
 	bool  connectServer();
 	
 	static void* ThreadReceiveMessage(void *p);
@@ -112,7 +112,7 @@ public:
 	void stop(boolean b);
 	void reconnect();
 	bool isWaitConnect();
-	//·¢ËÍÊı¾İ
+	//å‘é€æ•°æ®
 	void sendMessage_(Message* msg,bool b);	
 	
 	Message* popReceivedMessage();

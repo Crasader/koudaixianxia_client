@@ -1,4 +1,4 @@
-           //
+ï»¿           //
 //  MainView.cpp
 //  TestGame
 //
@@ -75,7 +75,7 @@ void MainView::SecondLayer(){
     drag_sp->setPosition(ccp(0, 0));
     slayer->addChild(drag_sp,0);
 
-    namelabel= CCLabelTTF::create("ÕâÀïÊÇÃû×Ö", SELF_TTF_ONE, 60);
+    namelabel= CCLabelTTF::create("è¿™é‡Œæ˜¯åå­—", SELF_TTF_ONE, 60);
     namelabel->setPosition(ccp(size.width/4, size.height-size.height/6));
     namelabel->setColor(fontColor);
     this->addChild(namelabel,2);
@@ -420,7 +420,7 @@ void MainView::setRole(){
             mainsp->m_petid=petinfo["petid"].asInt();
             mainsp->m_level=petinfo["level"].asInt();
             mainsp->m_id=petinfo["ppid"].asInt();
-            mainsp->m_hittarget=petinfo["dex_base"].asInt();//ÃüÖĞ
+            mainsp->m_hittarget=petinfo["dex_base"].asInt();//å‘½ä¸­
             mainsp->m_tenacity=petinfo["tou_base"].asInt();
             mainsp->m_dodge=petinfo["agl_base"].asInt();
             mainsp->m_parry=petinfo["par_base"].asInt();

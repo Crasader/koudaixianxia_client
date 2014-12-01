@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  BattleLayer.cpp
 //  TestGame
 //
@@ -29,7 +29,7 @@ bool BattleLayer::init(){
         GameData::shareGameData()->oldtime=t;
         CCSize size= CCDirector::sharedDirector()->getWinSize();
         setTouchEnabled(true);
-        CCSprite *attack_bg=CCSprite::create(M_BATTLE_BG);//±³¾°Í¼
+        CCSprite *attack_bg=CCSprite::create(M_BATTLE_BG);//èƒŒæ™¯å›¾
         attack_bg->setPosition(ccp(size.width/2, size.height/2));
         this->addChild(attack_bg,-1080);
         touch_arr= CCArray::create();
@@ -45,6 +45,7 @@ bool BattleLayer::init(){
 void BattleLayer::onEnterTransitionDidFinish(){
     CCLayer::onEnter();
 }
+
 void BattleLayer::onEnter(){
     AnimatePacker::getInstance()->loadAnimations("wenzi.xml");
     AnimatePacker::getInstance()->loadAnimations(T_DH_TX_XML);
@@ -250,7 +251,7 @@ void BattleLayer::line()
 	vertexCpy++ ;
 	
 	for (int i = 0; i < m_Index-2; i++) {
-		//ÉÏ°ë¸öËÄ±ßÐÎ
+		//ä¸ŠåŠä¸ªå››è¾¹å½¢
 		*vertexCpy = vertexMiddle[m_Index-(i+2)] ;
 		*lineCpy = MIDDLE_POINT_R; lineCpy++ ;
 		*lineCpy = MIDDLE_POINT_G; lineCpy++ ;
@@ -289,7 +290,7 @@ void BattleLayer::line()
 		*lineCpy = TOP_POINT_A; lineCpy++ ;
 		vertexCpy++ ;
 		
-		//ÏÂ°ë¸öËÄ±ßÐÎ
+		//ä¸‹åŠä¸ªå››è¾¹å½¢
 		*vertexCpy = vertexBottom[i+1] ;
 		*lineCpy = BOTTOM_POINT_R; lineCpy++ ;
 		*lineCpy = BOTTOM_POINT_G; lineCpy++ ;
@@ -403,7 +404,7 @@ void BattleLayer::ccTouchesBegan(cocos2d::CCSet *set, cocos2d::CCEvent *event){
         CCPoint pos= pTouch->getLocation();
         path.clear();
         path.push_back(Point2D(pos.x,pos.y));
-        //»­Ïß
+        //ç”»çº¿
         for (int i= 0; i<GameData::shareGameData()->roleArr->count(); i++) {
 
             Person *obj=(Person *)GameData::shareGameData()->roleArr->objectAtIndex(i);
@@ -823,7 +824,7 @@ void BattleLayer::ccTouchesMoved(cocos2d::CCSet *set, cocos2d::CCEvent *event){
         m_personEndedPoint=pTouch->getLocation();
         m_touchBeganPoint = CCDirector::sharedDirector()->convertToGL(m_touchBeganPoint) ;
         path.push_back(Point2D(m_touchBeganPoint.x,m_touchBeganPoint.y));
-        //»­Ïß
+        //ç”»çº¿
         for (vector<int>::const_iterator it=touchNum.begin(); it<touchNum.end(); it++) {
             if (pTouch->getID()==*it) {
                 
@@ -1106,7 +1107,7 @@ void BattleLayer::ccTouchesEnded(cocos2d::CCSet *set, cocos2d::CCEvent *event){
         m_bTouched = false ;
         
         
-        
+        /*
         for (vector<int>::const_iterator it=touchNum.begin(); it<touchNum.end(); it++) {
             
             if (pTouch->getID()==*it) {
@@ -1117,7 +1118,19 @@ void BattleLayer::ccTouchesEnded(cocos2d::CCSet *set, cocos2d::CCEvent *event){
 //                this->schedule(schedule_selector(BattleLayer::enemyHited));
                 removeTouchDir(pTouch);
             }
-        }
+        }*/
+		for (vector<int>::const_iterator cite = touchNum.begin(); cite < touchNum.end(); ++cite)
+		{
+			if (*cite == pTouch->getID())
+			{
+				touchNum.erase(touchNum.begin()+*cite);
+//                pinballlayer=PinballLayer::create(ccp(pTouch->getLocation().x, pTouch->getLocation().y));
+//                this->addChild(pinballlayer,3);
+//                this->schedule(schedule_selector(BattleLayer::enemyHited));
+				removeTouchDir(pTouch);
+				break;
+			}
+		}
     }
 }
 void BattleLayer::removeSkillTexture(){
@@ -1289,7 +1302,7 @@ void BattleLayer::checkGestures(Path2D paths){
     RecognitionResult results=geo->recognize(paths);
     CCLog("%s",results.name.c_str());
 //    if (!strcmp(results.name.c_str(), "Line")) {
-//        gestureTag = 1;//1 Ö±Ïß
+//        gestureTag = 1;//1 ç›´çº¿
 //    }else if(!strcmp(results.name.c_str(),"Circle")){
 //        gestureTag = 2;
 //        

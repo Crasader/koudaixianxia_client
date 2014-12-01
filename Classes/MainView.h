@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  MainView.h
 //  TestGame
 //
@@ -15,6 +15,7 @@
 #include "MessageManager.h"
 #include "message.h"
 
+// ç™»é™†åçš„ä¸»ç•Œé¢
 class MainView:public CCLayer{
 public:
     vector<string> fbtexture;
@@ -24,9 +25,9 @@ public:
     bool fire_menu_flag;
     bool flmenuFlag;
     
-    CCMenu *m_pWelfareMenu;//¸£Àû°´Å¥
-    CCMenu *m_pFireMenu;//Õ½¶·°´Å¥
-    CCMenu *m_pTeamMenu;//ÍÅ¶Ó°´Å¥
+    CCMenu *m_pWelfareMenu;//ç¦åˆ©æŒ‰é’®
+    CCMenu *m_pFireMenu;//æˆ˜æ–—æŒ‰é’®
+    CCMenu *m_pTeamMenu;//å›¢é˜ŸæŒ‰é’®
     CCLayerColor *color;
     CCLabelTTF *namelabel;
     CCLabelTTF *coinLabel;
@@ -36,16 +37,16 @@ public:
     CCPoint fpoint;
     LoadingLayer *intensifLayer;
     CCLayer *slayer;
-    CCSize size;//´°¿Ú´óĞ¡
+    CCSize size;//çª—å£å¤§å°
     CCMenu *fmenu;
     
     static CCScene * scene();
     virtual bool init();
-    void receiveWelfareMsg(CCObject *pObj);//½ÓÊÕÏûÏ¢ÊÂ¼ş
-    void getWelfareMsg(float flt);//»ñÈ¡ÏûÏ¢ÊÂ¼ş
+    void receiveWelfareMsg(CCObject *pObj);//æ¥æ”¶æ¶ˆæ¯äº‹ä»¶
+    void getWelfareMsg(float flt);//è·å–æ¶ˆæ¯äº‹ä»¶
     void SecondLayer();
-    void setCoin();//³õÊ¼»¯½ğÇ®ĞÅÏ¢
-    void setRole();//³õÊ¼»¯ÈËÎïĞÅÏ¢
+    void setCoin();//åˆå§‹åŒ–é‡‘é’±ä¿¡æ¯
+    void setRole();//åˆå§‹åŒ–äººç‰©ä¿¡æ¯
     void loadFBTexture();
     CREATE_FUNC(MainView);
     ~MainView();

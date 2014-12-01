@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  MessageManager.cpp
 //  TestGame
 //
@@ -72,7 +72,7 @@ void MessageManager::receiveRegisterMessage(CCObject *pObj){
     CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, "1002");
     CCNotificationCenter::sharedNotificationCenter()->postNotification("registerMessage", pObj);
 }
-void MessageManager::sendPetMessage(){//»ñÈ¡ÉÏ³¡³èÎïÐÅÏ¢
+void MessageManager::sendPetMessage(){//èŽ·å–ä¸Šåœºå® ç‰©ä¿¡æ¯
     CSJson::FastWriter writer;
     CSJson::Value root;
     root["pid"]=GameData::shareGameData()->chaId;

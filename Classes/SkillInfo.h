@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  SkillInfo.h
 //  TestGame
 //
@@ -27,34 +27,34 @@ public:
     ~SkillsInfo();
     static SkillsInfo *create(int skillId);
     void initWithSkillId(int skillId);
-    int m_skillRange;//Ã¿Ò»´Î´¥·¢¼¼ÄÜºó Åö´¥Ç½±Ú´ÎÊı °ë¾¶ ÉËº¦´ÎÊı
+    int m_skillRange;//æ¯ä¸€æ¬¡è§¦å‘æŠ€èƒ½å ç¢°è§¦å¢™å£æ¬¡æ•° åŠå¾„ ä¼¤å®³æ¬¡æ•°
     void regionalSKill();
 
-    const char *m_skillName;//¼¼ÄÜÃû³Æ
-    int m_skillTypeId;//¼¼ÄÜÀàĞÍ 1£¬Éä»÷ 2£¬µ¯µ¯Çò 3£¬Ô²ĞÎ·¶Î§ 4£¬ÇĞË®¹û
-    const char *m_skillScript;//ÉËº¦¼ÆËã¹«Ê½
-    int m_skillCounts;//Ã¿´ÎÔÊĞí·¢Éä´ÎÊı£¬x±íÊ¾x´Î¼¼ÄÜÖ®ºó¼¼ÄÜÀäÈ´
+    const char *m_skillName;//æŠ€èƒ½åç§°
+    int m_skillTypeId;//æŠ€èƒ½ç±»å‹ 1ï¼Œå°„å‡» 2ï¼Œå¼¹å¼¹çƒ 3ï¼Œåœ†å½¢èŒƒå›´ 4ï¼Œåˆ‡æ°´æœ
+    const char *m_skillScript;//ä¼¤å®³è®¡ç®—å…¬å¼
+    int m_skillCounts;//æ¯æ¬¡å…è®¸å‘å°„æ¬¡æ•°ï¼Œxè¡¨ç¤ºxæ¬¡æŠ€èƒ½ä¹‹åæŠ€èƒ½å†·å´
     
-    float m_skillTimes;// ¼¼ÄÜÀäÈ´Ê±¼ä
-    int m_skillBuffid;//³ö·¢µÄbuffid  0ÎªÃ»ÓĞbuff
-    int m_skillCri;//±©»÷¸ÅÂÊ 50±íÊ¾³ö·¢¸ÅÂÊ50%
-    double m_skillCrp;//±©»÷ÍşÁ¦
-    int nextid;//±¾¼¼ÄÜÉı¼¶ºóµÄ¼¼ÄÜid
-    int gold;//¼¼ÄÜÉı¼¶ËùĞèÒªµÄ½ğ±Ò
-    int attackeffect;//¼¼ÄÜÊÍ·ÅÌØĞ§
-    int moveeffect;// ¼¼ÄÜÒÆ¶¯ÌØĞ§
-    int passiveeffect;//ÊÜ»÷ÌØĞ§
+    float m_skillTimes;// æŠ€èƒ½å†·å´æ—¶é—´
+    int m_skillBuffid;//å‡ºå‘çš„buffid  0ä¸ºæ²¡æœ‰buff
+    int m_skillCri;//æš´å‡»æ¦‚ç‡ 50è¡¨ç¤ºå‡ºå‘æ¦‚ç‡50%
+    double m_skillCrp;//æš´å‡»å¨åŠ›
+    int nextid;//æœ¬æŠ€èƒ½å‡çº§åçš„æŠ€èƒ½id
+    int gold;//æŠ€èƒ½å‡çº§æ‰€éœ€è¦çš„é‡‘å¸
+    int attackeffect;//æŠ€èƒ½é‡Šæ”¾ç‰¹æ•ˆ
+    int moveeffect;// æŠ€èƒ½ç§»åŠ¨ç‰¹æ•ˆ
+    int passiveeffect;//å—å‡»ç‰¹æ•ˆ
     int _skillId;
 private:
     
 };
 typedef enum {
-THROW=1,//Í¶ÖÀ
-EARTHBULGE,//µØÃæÍ»Æğ
-CHARGE,//³å·æ
-IMPRISONMENT,//½ûïÀ
-RANGE,//·¶Î§
-RUSH,//³å»÷²¨
+THROW=1,//æŠ•æ·
+EARTHBULGE,//åœ°é¢çªèµ·
+CHARGE,//å†²é”‹
+IMPRISONMENT,//ç¦é”¢
+RANGE,//èŒƒå›´
+RUSH,//å†²å‡»æ³¢
 SUMMON,
 CONTINUOUSATTACK
 }ENEMYSKILLTYPE;

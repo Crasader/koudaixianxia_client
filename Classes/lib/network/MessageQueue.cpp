@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  MessageQueue.cpp
 //  client1
 //  www.9miao.com
@@ -31,17 +31,17 @@ MessageQueue* MessageQueue::getMessage()
 void MessageQueue::initSocket(char * ip,int port){
     sclient = new SocketClient(ip,port,1,1,NULL);
 }
-//½ÓÊÜÊý¾Ý    pop
+//æŽ¥å—æ•°æ®    pop
 Message* MessageQueue::getMessagedata(int commandId)
 {
     
     return sclient->popReceivedMessage();
 }
-//·¢ËÍ
+//å‘é€
 void MessageQueue::sendMessage(Message * data,bool flag){
     sclient->sendMessage_(data, flag);
 }
-//²»pop
+//ä¸pop
 Message * MessageQueue::pickReceivedMessage(){
     return sclient->pickReceivedMessage();
 }

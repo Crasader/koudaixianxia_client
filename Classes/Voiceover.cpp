@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  Voiceover.cpp
 //  TestGame
 //
@@ -13,8 +13,8 @@ bool Voiceover::init(){
         return false;
     }
     CCSize size=CCDirector::sharedDirector()->getWinSize();
-    std::string str1="»¶Ó­À´µ½×ÚÅÉ£¡Ã¿¸ö»ï°é¶¼ÓÐ×Ô¼º¶ÀÌØµÄÔªÉñ¼¼ÄÜ£¡";
-    std::string str2="Äã¿ÉÒÔÍ¨¹ýÕÐÄ¼¸ü¶àµÄ»ï°éÀ´À©´óÍÅ¶Ó£¡";
+    std::string str1="æ¬¢è¿Žæ¥åˆ°å®—æ´¾ï¼æ¯ä¸ªä¼™ä¼´éƒ½æœ‰è‡ªå·±ç‹¬ç‰¹çš„å…ƒç¥žæŠ€èƒ½ï¼";
+    std::string str2="ä½ å¯ä»¥é€šè¿‡æ‹›å‹Ÿæ›´å¤šçš„ä¼™ä¼´æ¥æ‰©å¤§å›¢é˜Ÿï¼";
     description=  CCLabelTTF::create("", "AmericanTypewriter-Bold", 60, CCSizeMake(0,100), kCCTextAlignmentLeft);
     description->setAnchorPoint(ccp(0, 0));
     description->setPosition(ccp(300, size.height/2));

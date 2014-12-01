@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  BattleScene.h
 //  TestGame
 //
@@ -18,8 +18,8 @@ public:
     static CCScene * scene();
     SocketClient * socket;
     virtual bool init();
-    void sendEnterBattle();//·¢ËÍ½øÈëÕ½³¡ĞÅÏ¢
-    void receiveEnterBattle(float flt);//½ÓÊÕ½øÈëÕ½³¡ĞÅÏ¢
+    void sendEnterBattle();//å‘é€è¿›å…¥æˆ˜åœºä¿¡æ¯
+    void receiveEnterBattle(float flt);//æ¥æ”¶è¿›å…¥æˆ˜åœºä¿¡æ¯
     CCLayerColor *voiceoverLayer;
     BattleLayer *line;
     void onExit();

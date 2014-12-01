@@ -1,13 +1,13 @@
-#ifndef _UTIL_H_
+ï»¿#ifndef _UTIL_H_
 #define _UTIL_H_
 #include "cocos2d.h"
 
 #include <vector>
 #include <string>
 #include <cmath>
-//algorithmÍ·ÎÄ¼ş°üº¬make_heap,pop_heapµÈ¶Ñ²Ù×÷£¨android£©by hubin.
+//algorithmå¤´æ–‡ä»¶åŒ…å«make_heap,pop_heapç­‰å †æ“ä½œï¼ˆandroidï¼‰by hubin.
 #include <algorithm>
-//Ôö¼Ósleep·½·¨µÄÍ·ÎÄ¼ş£¬²»È»android°æ±¾×Å²»µ½¶ÔÓ¦µÄº¯Êı£¬iphoneµÄÊÇÄ¬ÈÏÕÒµÄÆ»¹ûÏµÍ³ÀïµÄÍ¬Ñù·½·¨ by hubin
+//å¢åŠ sleepæ–¹æ³•çš„å¤´æ–‡ä»¶ï¼Œä¸ç„¶androidç‰ˆæœ¬ç€ä¸åˆ°å¯¹åº”çš„å‡½æ•°ï¼Œiphoneçš„æ˜¯é»˜è®¤æ‰¾çš„è‹¹æœç³»ç»Ÿé‡Œçš„åŒæ ·æ–¹æ³• by hubin
 #ifdef CC_PLATFORM_WIN32
 
 // typedef struct
@@ -41,7 +41,7 @@ using namespace std;
 #define SQ_SAFE_DELETE_ARRAY(x) {if(x){ delete[] x; x = 0; }}
 #define SQ_SAFE_DELETE_VEC(x) {for(int i = 0; i < x->size();i++){delete (x+i);}delete[] x;}
 /**
- * @Fields ERROR_INS : Îó²îĞŞÕı
+ * @Fields ERROR_INS : è¯¯å·®ä¿®æ­£
  */
 static const double ERROR_INS = 0.005;
 extern unsigned char* readFile(const char *filename);
@@ -78,15 +78,15 @@ const char* fullpathFromRelatePath(const char* relatePath);
 
 
 /**
- return : ÊÇ·ñ´æµµ³É¹¦
+ return : æ˜¯å¦å­˜æ¡£æˆåŠŸ
  **/
 bool writeSaveData(const char* relatepath,char* buf,int len);
 /**
- ¶ÁÈ¡´æµµ
+ è¯»å–å­˜æ¡£
  */
 ByteBuffer* readSaveData(const char* relatepath);
 
-//¶ÁÈ¡assets°ü¹ü×ÊÔ´,isfullPathÊÇ·ñÊÇÈ«Ä¿Â¼,Èç¹ûÊÇ×ÊÔ´Ä¿Â¼ÖĞµÄ×ÊÔ´¾ÍÓÃfalse£¬Èç¹û²»ÊÇ¾ÍÓÃtrue
+//è¯»å–assetsåŒ…è£¹èµ„æº,isfullPathæ˜¯å¦æ˜¯å…¨ç›®å½•,å¦‚æœæ˜¯èµ„æºç›®å½•ä¸­çš„èµ„æºå°±ç”¨falseï¼Œå¦‚æœä¸æ˜¯å°±ç”¨true
 ByteBuffer* getFileData(const char* pszfullFilepath, bool isfullPath);
 
 class MyLock{

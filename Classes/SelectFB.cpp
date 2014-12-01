@@ -1,4 +1,4 @@
-//
+﻿//
 //  SelectFB.cpp
 //  TestGame
 //
@@ -247,6 +247,7 @@ void SelectFB::receiveJsonData(CCObject *obj){//
     this->scheduleOnce(schedule_selector(SelectFB::setData), 0.01f);
 }
 void SelectFB::aaaaa(float flt){
+	// 设置关卡名称
     UITextArea *names= dynamic_cast<UITextArea *>(layer->getWidgetByTag(301));
     names->setText(str_callback.c_str());
 }

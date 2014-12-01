@@ -1,4 +1,4 @@
-//
+О╩©//
 //  LoginScene.cpp
 //  TestGame
 //
@@ -37,6 +37,7 @@ bool LoginScene::init(){
 	m_bLoginFlag = false;
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(LoginScene::socketError), "socketError", NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(LoginScene::loginMenuCallBack), "loginMessage", NULL);
+	// Х╣└Ф╨░Е┼═Х╫╫Е╝▄Д╧▀Е░▌Г └Е⌡·Х╟┐
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(LoginScene::loadUI), "loadingremove", NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(LoginScene::receiveMainScene), "petsInfo", NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(LoginScene::personalBack), "personMessage", NULL);
@@ -119,7 +120,7 @@ void LoginScene::loginMenuCallBack(CCObject * obj){
                 this->scheduleOnce(schedule_selector(LoginScene::registerMenuCallBack), 0.01f);
             }else{
                 class MessageBox *msgbox=MessageBox::create();
-                msgbox->CMessageBox("╢М  нС", "ЁЖ╢Макё║");
+                msgbox->CMessageBox("И■≥  Х╞╞", "Е┤╨И■≥Д╨├О╪│");
             }
         }
     }

@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameData.cpp
 //  TestGame
 //

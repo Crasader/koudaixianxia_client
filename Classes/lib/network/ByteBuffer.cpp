@@ -1,4 +1,4 @@
-//www.9miao.com
+ï»¿//www.9miao.com
 #include "ByteBuffer.h"
 #include "Util.h"
 #include "SocketClient.h"
@@ -497,7 +497,7 @@ void ByteBuffer::putBoolean(bool b)
 	
 }
 
-//Õâ¸ö·½·¨Ö»ÄÜÓÃÓÚ´ò¿ªµÄÊÇÎÄ±¾ÎÄ¼şµÄÊ±ºò
+//è¿™ä¸ªæ–¹æ³•åªèƒ½ç”¨äºæ‰“å¼€çš„æ˜¯æ–‡æœ¬æ–‡ä»¶çš„æ—¶å€™
 String ByteBuffer::getLine(){
     if( position>=capacity) return "";
 	string line;

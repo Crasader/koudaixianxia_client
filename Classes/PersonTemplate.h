@@ -1,4 +1,4 @@
-//
+ï»¿//
 //  PersonTemplate.h
 //  TestGame
 //
@@ -50,23 +50,23 @@ public:
     bool lockFlag;
     SkillsInfo *skill;
 	CCSprite *selectedCircle;
-   // CCArmature* m_role;//¹Ç÷À¶¯»­
+   // CCArmature* m_role;//éª¨éª¼åŠ¨ç”»
     CCSprite *m_role;
     CCLabelTTF *reduceBlood;
     bool isDead;
-    //³õÊ¼»¯¾²Ì¬ÊôĞÔ
+    //åˆå§‹åŒ–é™æ€å±æ€§
     void setStaticProperties(int basehp,int baseattack,float defense_coff,float dodge_coff,
                              float tenacity_coff,float parry_coff,float deflect_coff,
                              float strike_coff,float strike_result_coff,float hitrate_coff);
-    //³õÊ¼»¯¶¯Ì¬ÊôĞÔ
+    //åˆå§‹åŒ–åŠ¨æ€å±æ€§
     void setDynamicProperties(int mAttack,int mHp,int mDefense,int mHitRate,int mDodge,
                               int mParry,int mStrike,int mStrikeResult);
-    //»ñµÃ¹¥»÷½á¹û
+    //è·å¾—æ”»å‡»ç»“æœ
     float getAttackResult();
     void reduceBloodCallBack(CCNode *sender);
     virtual void loadPersonTexture();
     
-    //½ÇÉ«ËÀÍö
+    //è§’è‰²æ­»äº¡
     
     bool m_skillTouch;
   virtual  void roleDead();
@@ -79,50 +79,50 @@ public:
     void initBones();
     void setZ();
     virtual void motionType(PersonMotion per,int dir,const char* armname);
-    int hostility;//³ğºŞ
-    //ÈËÎïÊôĞÔ£¨¶¯Ì¬ÊôĞÔ£©
+    int hostility;//ä»‡æ¨
+    //äººç‰©å±æ€§ï¼ˆåŠ¨æ€å±æ€§ï¼‰
     int type;
     int res_icon;
     int res_resource;
     int m_btype;
-    int m_level;//µÈ¼¶
+    int m_level;//ç­‰çº§
     int m_id;// id
-    int m_petid;//Ä£°åid
-    std::string m_name;//Ãû×Ö
+    int m_petid;//æ¨¡æ¿id
+    std::string m_name;//åå­—
     int skillId;
     bool isTouch;
-    int m_attack;//¹¥»÷
-    int m_hp;//ÑªÁ¿
+    int m_attack;//æ”»å‡»
+    int m_hp;//è¡€é‡
     int cur_hp;
-    int m_defense;//·ÀÓù
-    //Òş²ØÊôĞÔ
-    int m_hittarget;//ÃüÖĞ
-    int m_tenacity;//ÈÍĞÔ
-    int m_dodge;//ÉÁ±Ü
-    int m_parry;//¸ñµ²
-    int m_strike;//±©»÷
-    int m_strike_result;//±©»÷ÍşÁ¦
-    //ÆäËûÊôĞÔ
-    int m_range;//¹¥»÷·¶Î§
-    int m_speed;//ÒÆ¶¯ËÙ¶È
-    int m_attack_speed;//¹¥»÷ËÙ¶È
-    //¹Ì¶¨ÊôĞÔ
-    int base_hp;//±ê×¼ÉúÃü
-    int base_attack;//±ê×¼¹¥»÷
-    int base_strike;//±ê×¼±©»÷Öµ
-    float defense_cf;//·ÀÓùÏµÊı
-    float dodge_cf;//ÉÁ±ÜÏµÊı
-    float tenacity_cf;//ÈÍĞÔÏµÊı
-    float parry_cf;//¸ñµ²ÏµÊı
-    float deflect_cf;//Æ«Ğ±ÏµÊı
-    float strike_cf;//±©»÷ÂÊÏµÊı
-    float strike_result_cf;//±©»÷ÍşÁ¦ÏµÊı
-    float hitrate_cf;//ÃüÖĞÏµÊı
+    int m_defense;//é˜²å¾¡
+    //éšè—å±æ€§
+    int m_hittarget;//å‘½ä¸­
+    int m_tenacity;//éŸ§æ€§
+    int m_dodge;//é—ªé¿
+    int m_parry;//æ ¼æŒ¡
+    int m_strike;//æš´å‡»
+    int m_strike_result;//æš´å‡»å¨åŠ›
+    //å…¶ä»–å±æ€§
+    int m_range;//æ”»å‡»èŒƒå›´
+    int m_speed;//ç§»åŠ¨é€Ÿåº¦
+    int m_attack_speed;//æ”»å‡»é€Ÿåº¦
+    //å›ºå®šå±æ€§
+    int base_hp;//æ ‡å‡†ç”Ÿå‘½
+    int base_attack;//æ ‡å‡†æ”»å‡»
+    int base_strike;//æ ‡å‡†æš´å‡»å€¼
+    float defense_cf;//é˜²å¾¡ç³»æ•°
+    float dodge_cf;//é—ªé¿ç³»æ•°
+    float tenacity_cf;//éŸ§æ€§ç³»æ•°
+    float parry_cf;//æ ¼æŒ¡ç³»æ•°
+    float deflect_cf;//åæ–œç³»æ•°
+    float strike_cf;//æš´å‡»ç‡ç³»æ•°
+    float strike_result_cf;//æš´å‡»å¨åŠ›ç³»æ•°
+    float hitrate_cf;//å‘½ä¸­ç³»æ•°
     
-    float damage_rate;//ÉËº¦ÂÊ
-    float avoid_rate;//¶ã±ÜÂÊ
-    float parry_rate;//¸ñµ²ÂÊ
-    float strike_rate;//±©»÷ÂÊ
+    float damage_rate;//ä¼¤å®³ç‡
+    float avoid_rate;//èº²é¿ç‡
+    float parry_rate;//æ ¼æŒ¡ç‡
+    float strike_rate;//æš´å‡»ç‡
     
     int m_skillTouchs;
     int m_maxTouchs;
