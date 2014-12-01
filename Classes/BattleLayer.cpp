@@ -45,6 +45,7 @@ bool BattleLayer::init(){
 void BattleLayer::onEnterTransitionDidFinish(){
     CCLayer::onEnter();
 }
+
 void BattleLayer::onEnter(){
     AnimatePacker::getInstance()->loadAnimations("wenzi.xml");
     AnimatePacker::getInstance()->loadAnimations(T_DH_TX_XML);
@@ -1106,7 +1107,7 @@ void BattleLayer::ccTouchesEnded(cocos2d::CCSet *set, cocos2d::CCEvent *event){
         m_bTouched = false ;
         
         
-        
+        /*
         for (vector<int>::const_iterator it=touchNum.begin(); it<touchNum.end(); it++) {
             
             if (pTouch->getID()==*it) {
@@ -1117,7 +1118,19 @@ void BattleLayer::ccTouchesEnded(cocos2d::CCSet *set, cocos2d::CCEvent *event){
 //                this->schedule(schedule_selector(BattleLayer::enemyHited));
                 removeTouchDir(pTouch);
             }
-        }
+        }*/
+		for (vector<int>::const_iterator cite = touchNum.begin(); cite < touchNum.end(); ++cite)
+		{
+			if (*cite == pTouch->getID())
+			{
+				touchNum.erase(touchNum.begin()+*cite);
+//                pinballlayer=PinballLayer::create(ccp(pTouch->getLocation().x, pTouch->getLocation().y));
+//                this->addChild(pinballlayer,3);
+//                this->schedule(schedule_selector(BattleLayer::enemyHited));
+				removeTouchDir(pTouch);
+				break;
+			}
+		}
     }
 }
 void BattleLayer::removeSkillTexture(){

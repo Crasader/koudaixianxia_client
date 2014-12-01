@@ -54,6 +54,7 @@ private:
     b2Fixture *m_ballfixture;
     void times(float dt);
 };
+
 class BattleLayer:public CCLayer{
 public:
     virtual bool init();
